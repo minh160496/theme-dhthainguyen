@@ -1,7 +1,7 @@
 "server only";
 
-import { Home } from "@/features/home";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import { Home } from "@/features/home";
 
 const getPost = async () => {
   const api_url = process.env.API_URL || "";
@@ -38,7 +38,7 @@ const HomePage = async () => {
   if (errorCode) return null;
   return (
     <main>
-      <ErrorBoundary>
+      <ErrorBoundary fallback={<h1>Lỗi phía server</h1>}>
         <Home posts={posts || []} />
       </ErrorBoundary>
     </main>
