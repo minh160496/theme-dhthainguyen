@@ -1,8 +1,4 @@
-"use client";
-
-import ErrorBoundary from "@/components/ErrorBoundary";
 import { Home } from "@/features/home";
-import { useEffect, useState } from "react";
 
 const getPost = async () => {
   const api_url = "https://eaof.vn/wp-json/wp/v2";
@@ -34,23 +30,12 @@ const getPost = async () => {
   };
 };
 
-const HomePage = () => {
-  const [posts, setPosts] = useState<any[]>([]);
-
-  useEffect(() => {
-    const g = async () => {
-      const { posts } = await getPost();
-      if (posts) setPosts(posts);
-    };
-
-    g();
-  }, []);
+const HomePage = async () => {
+  const { posts } = await getPost();
 
   return (
     <main>
-      <ErrorBoundary fallback={<h1>Lỗi phía server</h1>}>
-        <Home posts={posts || []} />
-      </ErrorBoundary>
+      <Home posts={posts || []} />
     </main>
   );
 };
