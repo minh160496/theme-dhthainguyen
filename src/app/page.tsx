@@ -1,7 +1,8 @@
-"server only";
+"use client";
 
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { Home } from "@/features/home";
+import { useEffect, useState } from "react";
 
 const getPost = async () => {
   const api_url = process.env.API_URL || "";
@@ -33,9 +34,18 @@ const getPost = async () => {
   };
 };
 
-const HomePage = async () => {
-  const { posts, errorCode } = await getPost();
-  if (errorCode) return null;
+const HomePage = () => {
+  const [posts, setPosts] = useState<any[]>([]);
+
+  useEffect(() => {
+    const g = async () => {
+      const { posts } = await getPost();
+      if (posts) setPosts(posts);
+    };
+
+    g();
+  }, []);
+
   return (
     <main>
       <ErrorBoundary fallback={<h1>Lỗi phía server</h1>}>
