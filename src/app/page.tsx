@@ -5,7 +5,7 @@ import { Home } from "@/features/home";
 import { useEffect, useState } from "react";
 
 const getPost = async () => {
-  const api_url = process.env.API_URL || "";
+  const api_url = "https://eaof.vn/wp-json/wp/v2";
   const res = await fetch(
     `${api_url}/posts?_embed&per_page=3&status=publish&page=1`,
     {
@@ -42,8 +42,6 @@ const HomePage = () => {
       const { posts } = await getPost();
       if (posts) setPosts(posts);
     };
-
-    console.log(posts);
 
     g();
   }, []);
