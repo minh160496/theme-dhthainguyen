@@ -14,7 +14,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import { BiSupport } from "react-icons/bi";
 import { GiSpookyHouse } from "react-icons/gi";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
@@ -24,18 +23,14 @@ const accSupport = [
     icon: <GiSpookyHouse />,
     title: "Sở hữu Bằng Đại học uy tín",
     content:
-      "Bằng Kỹ sư không ghi hình thức đào tạo và được Bộ Giáo dục công nhận, Có giá trị sử dụng trọn đời",
+      "Bằng Cử nhân không ghi hình thức đào tạo và được Bộ Giáo dục công nhận, Có giá trị sử dụng trọn đời",
   },
-  {
-    icon: <BiSupport />,
-    title: "Đội ngũ tư vấn 24/7",
-    content: "Tư vấn 24/7, hỗ trợ học tập và kỹ thuật nhanh chóng - tận tình",
-  },
+
   {
     icon: <SlCalender />,
     title: "Thời gian đào tạo",
     content:
-      "Thời gian đào tạo từ 2 - 4,5 năm giúp người học có thể học vượt để rút ngắn thời gian học tập theo quy định đào tạo tín chỉ.",
+      "Thời gian đào tạo từ 2 - 2,5 năm giúp người học có thể học vượt để rút ngắn thời gian học tập theo quy định đào tạo tín chỉ.",
   },
 
   {
@@ -82,7 +77,7 @@ export const AccSupport = () => {
 export const Support = () => {
   return (
     <Box
-      bg={"linear-gradient(180deg, rgba(255, 255, 255, 1), #00843e3d 100%)"}
+      bg={"linear-gradient(180deg, rgba(255, 255, 255, 1), #D6F5FE 100%)"}
       py={"48px"}
     >
       <Container maxW={"6xl"}>

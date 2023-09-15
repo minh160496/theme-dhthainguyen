@@ -19,7 +19,7 @@ interface INavItem {
 }
 
 export const DesktopNav = () => {
-  const linkColor = "#00843E";
+  const linkColor = "#054659";
   const linkHoverColor = "#FA692E";
   const popoverContentBgColor = "white";
 
@@ -83,7 +83,7 @@ export const DesktopSubNav = ({ title, path }: INavItem) => {
         <Box>
           <Text
             transition={"all .3s ease"}
-            color={"#00843E"}
+            color={"#054659"}
             _groupHover={{ color: "#FA692E" }}
             fontWeight={600}
           >

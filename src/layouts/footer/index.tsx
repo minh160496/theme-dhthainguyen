@@ -60,7 +60,7 @@ const SocialButton = ({
 
 export const Footer = () => {
   return (
-    <Box bg={"green.800"} color={"White"}>
+    <Box bg={"#054659"} color={"White"}>
       <Container as={Stack} maxW={"6xl"} py={10}>
         <Flex justify="center" align={"center"} direction="column" mb="32px">
           <Heading size="md" textAlign="center" mb={4}>

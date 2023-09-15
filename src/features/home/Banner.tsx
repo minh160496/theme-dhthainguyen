@@ -46,7 +46,7 @@ const Feature = ({ text, icon, iconBg }: FeatureProps) => {
 export const Banner = () => {
   return (
     <Box
-      bg={"linear-gradient(180deg, rgba(255, 255, 255, 1), #00843e3d 100%)"}
+      bg={"linear-gradient(180deg, rgba(255, 255, 255, 1), #D6F5FE 100%)"}
       py={"48px"}
     >
       <Container maxW={"6xl"} py={12}>
@@ -64,9 +64,9 @@ export const Banner = () => {
             >
               Tuyển sinh hệ từ xa E - learning
             </Text>
-            <Heading>Trường Đại học nông lâm</Heading>
+            <Heading>Trường Đại học Thái Nguyên</Heading>
             <Text color={"gray.500"} fontSize={"lg"}>
-              Chương trình tuyển sinh đại học từ xa Đại học nông lâm - Sở hữu
+              Chương trình tuyển sinh đại học từ xa Đại học Thái Nguyên - Sở hữu
               bằng Đại học chính quy ngay tại nhà
             </Text>
             <Stack
@@ -93,7 +93,7 @@ export const Banner = () => {
               <Feature
                 icon={<Icon as={PiCertificate} color={"#fc5934"} w={5} h={5} />}
                 iconBg={"#fc593473"}
-                text={"Bằng kỹ sư do Bộ Giáo dục và đào tạo công nhận"}
+                text={"Bằng cử nhân do Bộ Giáo dục và đào tạo công nhận"}
               />
             </Stack>
           </Stack>

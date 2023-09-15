@@ -104,7 +104,7 @@ const TestimonialAvatar = ({
 export const Review = () => {
   return (
     <Box
-      bg={"linear-gradient(180deg, rgba(255, 255, 255, 1), #00843e3d 100%)"}
+      bg={"linear-gradient(180deg, rgba(255, 255, 255, 1), #D6F5FE 100%)"}
       py={"48px"}
     >
       <Container maxW={"7xl"} py={16} as={Stack} spacing={12}>

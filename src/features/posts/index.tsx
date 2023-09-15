@@ -79,7 +79,7 @@ export const Posts = ({
 
   return (
     <Box pb={"40px"}>
-      <Box bg="radial-gradient(circle, rgba(0,132,62,1) 37%, rgba(89,227,53,1) 100%, rgba(252,89,52,1) 100%)">
+      <Box bg="radial-gradient(circle, rgba(5,70,89,1) 2%, rgba(98,212,245,1) 100%, rgba(252,89,52,1) 100%)">
         <Container maxW={"6xl"} py="60px">
           <Heading
             as="h2"

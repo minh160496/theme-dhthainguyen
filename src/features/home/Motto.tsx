@@ -38,7 +38,7 @@ export const Item = ({
       rounded={"sm"}
       pos={"relative"}
       color={"green.800"}
-      bg={"linear-gradient(180deg, rgba(255, 255, 255, 1), #00843e3d 100%)"}
+      bg={"linear-gradient(180deg, rgba(255, 255, 255, 1), #D6F5FE 100%)"}
     >
       <HStack pb="32px">
         <Avatar as={FaUniversity} color={"green.700"} p={"6px"} />
