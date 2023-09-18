@@ -13,7 +13,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { AiFillStar } from "react-icons/ai";
-import { FormContact } from "../../components/FormContact";
+import { FormContact, FormGetFly2 } from "../../components/FormContact";
 import styles from "@/styles/Home.module.css";
 
 const HeadSection = ({
@@ -100,7 +100,7 @@ export const Contact = () => {
           </GridItem>
 
           <GridItem>
-            <FormContact title="Đăng ký học" />
+            <FormGetFly2 />
           </GridItem>
         </SimpleGrid>
       </Container>

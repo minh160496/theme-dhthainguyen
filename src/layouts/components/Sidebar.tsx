@@ -1,14 +1,15 @@
 "use client";
 
+import { FormGetFly2 } from "@/components/FormContact";
 import { categotys } from "@/features/home/Categorys";
 import {
   Box,
   Button,
+  Flex,
   Heading,
   SimpleGrid,
   Text,
   VStack,
-  Flex,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +17,6 @@ import { BiLogoTiktok } from "react-icons/bi";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import { SiZalo } from "react-icons/si";
-import { FormContact } from "./FormContact";
 // import { FormGetFly } from "@/components/FormContact";
 
 export const Item = ({
@@ -131,15 +131,15 @@ export const Sidebar = ({ sticky }: { sticky?: string }) => {
       </Box>
 
       <Box pt={"24px"}>
-        {/* <Heading
+        <Heading
           as={"h3"}
           size={"md"}
           pb={"20px"}
           textAlign={{ base: "center", lg: "start" }}
         >
           Đăng ký tư vấn
-        </Heading> */}
-        <FormContact title="Đăng ký tư vấn" action="Đăng ký" />
+        </Heading>
+        <FormGetFly2 />
       </Box>
     </Box>
   );

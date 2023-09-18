@@ -19,7 +19,7 @@ import { FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa";
 import { InputRes } from "../../components/InputRes";
 import { Logo } from "../components/Logo";
 import { ModalBase } from "@/components/Modal";
-import { FormGetFly } from "@/components/FormContact";
+import { FormGetFly1 } from "@/components/FormContact";
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
@@ -149,7 +149,7 @@ export const Footer = () => {
         </Box>
       </Box>
       <ModalBase isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
-        <FormGetFly title="Để lại thông tin" />
+        <FormGetFly1 title="Để lại thông tin" />
       </ModalBase>
     </>
   );

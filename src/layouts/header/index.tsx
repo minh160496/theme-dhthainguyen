@@ -1,7 +1,7 @@
 "use client";
 
 import { BtnTheme } from "@/components/BtnTheme";
-import { FormGetFly } from "@/components/FormContact";
+import { FormGetFly1 } from "@/components/FormContact";
 import { ModalBase } from "@/components/Modal";
 import { Box, Container, Divider, Flex, useDisclosure } from "@chakra-ui/react";
 import { DesktopNav } from "../components/DeskhopNav";
@@ -76,7 +76,7 @@ export const Header = () => {
         </Container>
       </Box>
       <ModalBase isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
-        <FormGetFly title="Để lại thông tin" />
+        <FormGetFly1 title="Để lại thông tin" />
       </ModalBase>
     </>
   );

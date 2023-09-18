@@ -222,7 +222,7 @@ export const FormContact = (props: IForm) => {
   );
 };
 
-export const FormGetFly = ({ title }: { title?: string }) => {
+export const FormGetFly1 = ({ title }: { title?: string }) => {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const referrer =
@@ -302,6 +302,157 @@ export const FormGetFly = ({ title }: { title?: string }) => {
         </Heading>
       )}
       <div id="getfly-optin-form-iframe-1694663320597"></div>
+    </>
+  );
+};
+
+export const FormGetFly2 = ({ title }: { title?: string }) => {
+  useEffect(() => {
+    (function () {
+      const r =
+        window.document.referrer !== ""
+          ? window.document.referrer
+          : window.location.origin;
+      const regex = /(https?:\/\/.*?)\//g;
+      const furl = regex.exec(r);
+      const referrer = furl ? furl[0] : r;
+      const f = document.createElement("iframe");
+
+      const urlParams = new URLSearchParams(window.location.search);
+      let utmParams = "";
+
+      const match = document.cookie?.match(
+        new RegExp("utm_source" + "=([^;]+)")
+      );
+
+      if (
+        (!urlParams.has("utm_source") || urlParams.get("utm_source") === "") &&
+        document.cookie.match(new RegExp("utm_source" + "=([^;]+)")) !== null
+      ) {
+        utmParams +=
+          "&" + document.cookie.match(new RegExp("utm_source" + "=([^;]+)"))[0];
+      } else {
+        utmParams +=
+          urlParams.get("utm_source") !== null
+            ? "&utm_source=" + urlParams.get("utm_source")
+            : "";
+      }
+
+      if (
+        (!urlParams.has("utm_campaign") ||
+          urlParams.get("utm_campaign") === "") &&
+        document.cookie.match(new RegExp("utm_campaign" + "=([^;]+)")) !== null
+      ) {
+        utmParams +=
+          "&" +
+          document.cookie.match(new RegExp("utm_campaign" + "=([^;]+)"))[0];
+      } else {
+        utmParams +=
+          urlParams.get("utm_campaign") !== null
+            ? "&utm_campaign=" + urlParams.get("utm_campaign")
+            : "";
+      }
+
+      if (
+        (!urlParams.has("utm_medium") || urlParams.get("utm_medium") === "") &&
+        document.cookie.match(new RegExp("utm_medium" + "=([^;]+)")) !== null
+      ) {
+        utmParams +=
+          "&" + document.cookie.match(new RegExp("utm_medium" + "=([^;]+)"))[0];
+      } else {
+        utmParams +=
+          urlParams.get("utm_medium") !== null
+            ? "&utm_medium=" + urlParams.get("utm_medium")
+            : "";
+      }
+
+      if (
+        (!urlParams.has("utm_content") ||
+          urlParams.get("utm_content") === "") &&
+        document.cookie.match(new RegExp("utm_content" + "=([^;]+)")) !== null
+      ) {
+        utmParams +=
+          "&" +
+          document.cookie.match(new RegExp("utm_content" + "=([^;]+)"))[0];
+      } else {
+        utmParams +=
+          urlParams.get("utm_content") !== null
+            ? "&utm_content=" + urlParams.get("utm_content")
+            : "";
+      }
+
+      if (
+        (!urlParams.has("utm_term") || urlParams.get("utm_term") === "") &&
+        document.cookie.match(new RegExp("utm_term" + "=([^;]+)")) !== null
+      ) {
+        utmParams +=
+          "&" + document.cookie.match(new RegExp("utm_term" + "=([^;]+)"))[0];
+      } else {
+        utmParams +=
+          urlParams.get("utm_term") !== null
+            ? "&utm_term=" + urlParams.get("utm_term")
+            : "";
+      }
+
+      if (
+        (!urlParams.has("utm_user") || urlParams.get("utm_user") === "") &&
+        document.cookie.match(new RegExp("utm_user" + "=([^;]+)")) !== null
+      ) {
+        utmParams +=
+          "&" + document.cookie.match(new RegExp("utm_user" + "=([^;]+)"))[0];
+      } else {
+        utmParams +=
+          urlParams.get("utm_user") !== null
+            ? "&utm_user=" + urlParams.get("utm_user")
+            : "";
+      }
+
+      if (
+        (!urlParams.has("utm_account") ||
+          urlParams.get("utm_account") === "") &&
+        document.cookie.match(new RegExp("utm_account" + "=([^;]+)")) !== null
+      ) {
+        utmParams +=
+          "&" +
+          document.cookie.match(new RegExp("utm_account" + "=([^;]+)"))[0];
+      } else {
+        utmParams +=
+          urlParams.get("utm_account") !== null
+            ? "&utm_account=" + urlParams.get("utm_account")
+            : "";
+      }
+
+      utmParams += "&full_url=" + encodeURIComponent(window.location.href);
+      f.setAttribute(
+        "src",
+        `https://aum.getflycrm.com/api/forms/viewform/?key=Gks7frPWuBMzyzUC6CzH0zKCnGrO7OBcnenVzuBlKcWsplsPTm&referrer=${referrer}${utmParams}`
+      );
+      f.style.width = "100%";
+      f.style.height = "400px";
+      f.setAttribute("frameborder", "0");
+      f.setAttribute("marginheight", "0");
+      f.setAttribute("marginwidth", "0");
+      const s = document.getElementById(
+        "getfly-optin-form-iframe-1694663320595"
+      );
+      s?.appendChild(f);
+    })();
+  }, []);
+
+  return (
+    <>
+      {title && (
+        <Heading
+          as={"h2"}
+          size={{ base: "md", md: "lg" }}
+          textAlign={"center"}
+          color={"blue.700"}
+          pb={"16px"}
+        >
+          Để lại thông tin
+        </Heading>
+      )}
+      <div id="getfly-optin-form-iframe-1694663320595"></div>
     </>
   );
 };
