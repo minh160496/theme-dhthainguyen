@@ -1,7 +1,7 @@
 import { Home } from "@/features/home";
 
 const getPost = async () => {
-  const api_url = "https://eaof.vn/wp-json/wp/v2";
+  const api_url = process.env.API_URL || "https://eaof.vn/wp-json/wp/v2";
   const res = await fetch(
     `${api_url}/posts?_embed&per_page=3&status=publish&page=1`,
     {

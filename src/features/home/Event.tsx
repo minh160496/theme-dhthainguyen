@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const Event = ({ posts }: { posts: any[] }) => {
   return (
-    <Container maxW={"6xl"} pb={"64px"}>
+    <Container maxW={"6xl"} py={"64px"}>
       <HeadSection
         title="Tin tức"
         subtitle="news"

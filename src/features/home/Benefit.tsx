@@ -78,7 +78,7 @@ export const benefits = [
   {
     path: "#",
     title: "Sở hữu bằng đại học uy tín hàng đầu Việt Nam",
-    desc: "Chương trình học do trường Đại học Nông Lâm Thái Nguyên cấp bằng và được Bộ GD&ĐT công nhận",
+    desc: "Chương trình học do trường Đại học Thái Nguyên cấp bằng và được Bộ GD&ĐT công nhận",
     icon: PiCertificate,
   },
   {
@@ -105,7 +105,7 @@ export const Benefit = () => {
         <HeadSection
           title="Bạn nhận được gì"
           subtitle="benefit"
-          desc="Những giá trị bạn sẽ nhận được từ chương trình của đại học nông lâm"
+          desc="Những giá trị bạn sẽ nhận được từ chương trình của đại học Thái Nguyên"
         />
         <SimpleGrid pt={"24px"} spacing={"8"} columns={{ base: 1, md: 2 }}>
           {benefits.map((categoty, index) => (

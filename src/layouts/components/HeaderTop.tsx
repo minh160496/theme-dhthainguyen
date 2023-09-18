@@ -17,7 +17,7 @@ export const Tags = ({
     <Tag
       borderRadius="full"
       variant="solid"
-      colorScheme="gray"
+      bg={"linear-gradient(70deg, #f68920 0%, #fc5934 100%)"}
       py="8px"
       px="8px"
       as={Link}

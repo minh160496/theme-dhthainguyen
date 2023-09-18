@@ -111,7 +111,7 @@ export const Review = () => {
         <HeadSection
           subtitle="Review"
           title="Đánh giá của học viên"
-          desc="Cùng lắng nghe những đánh giá của học viên đã tốt nghiệp hệ đào tạo từ xa tại tuaf"
+          desc="Cùng lắng nghe những đánh giá của học viên đã tốt nghiệp hệ đào tạo từ xa tại Đại học Thái Nguyên"
         />
         <Stack
           direction={{ base: "column", md: "row" }}
@@ -119,24 +119,7 @@ export const Review = () => {
         >
           <Testimonial>
             <TestimonialContent>
-              <TestimonialHeading>Hoàng Văn Tuấn</TestimonialHeading>
-              <TestimonialText>
-                Chương trình đào tạo giúp tôi có thêm nhiều kiến thức hay. Tôi
-                có thể nghiên cứu lại kiến thức bất kỳ lúc nào nhờ nguồn giáo
-                trình, tài liệu phong phú và thời gian học linh động
-              </TestimonialText>
-            </TestimonialContent>
-            <TestimonialAvatar
-              src={
-                "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
-              }
-              name={"Hoàng Văn Tuấn"}
-              title={"Chuyên Viên Phân tích và Nghiên cứu"}
-            />
-          </Testimonial>
-          <Testimonial>
-            <TestimonialContent>
-              <TestimonialHeading>Nguyễn Ngọc Anh</TestimonialHeading>
+              <TestimonialHeading>Nguyễn Thị Trang</TestimonialHeading>
               <TestimonialText>
                 Hệ đào tạo đại học từ xa của trường giúp tôi tiết kiệm được rất
                 nhiều thời gian và chi phí bởi vì tôi không cần phải đến tận
@@ -148,26 +131,43 @@ export const Review = () => {
               src={
                 "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
               }
-              name={"Nguyễn Thị Thanh Thảo"}
-              title={"Trình dược viên"}
+              name={"Nguyễn Thị Trang"}
+              title={"Trưởng phòng kinh doanh"}
             />
           </Testimonial>
           <Testimonial>
             <TestimonialContent>
-              <TestimonialHeading>Lê Tú</TestimonialHeading>
+              <TestimonialHeading>Nguyễn Phương Linh</TestimonialHeading>
               <TestimonialText>
                 Học tập trực tuyến mang nhiều ưu điểm vượt trội đã làm thay đổi
                 mạnh mẽ khả năng tự học nhằm đáp ứng chương trình học tập. Nhà
                 trường luôn tạo điều kiện cho học viên có thể sử dụng kho tài
-                liệu phong phú nhằm nâng cao hiệu quả học tập.
+                liệu phong phú nhằm nâng cao hiệu quả học tập
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
               src={
                 "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
               }
-              name={"Lê Tú"}
-              title={"Kỹ sư công nghệ thực phẩm"}
+              name={"Nguyễn Phương Linh"}
+              title={"Nhân viên Marketing"}
+            />
+          </Testimonial>
+          <Testimonial>
+            <TestimonialContent>
+              <TestimonialHeading>Phùng Văn Dũng</TestimonialHeading>
+              <TestimonialText>
+                Chương trình đào tạo giúp tôi có thêm nhiều kiến thức hay. Tôi
+                có thể nghiên cứu lại kiến thức bất kỳ lúc nào nhờ nguồn giáo
+                trình, tài liệu phong phú và thời gian học linh động
+              </TestimonialText>
+            </TestimonialContent>
+            <TestimonialAvatar
+              src={
+                "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
+              }
+              name={"Phùng Văn Dũng"}
+              title={"Nhân viên kế toán"}
             />
           </Testimonial>
         </Stack>

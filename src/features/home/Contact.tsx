@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { AiFillStar } from "react-icons/ai";
 import { FormContact } from "../../components/FormContact";
-import "./css/styles.css";
+import styles from "@/styles/Home.module.css";
 
 const HeadSection = ({
   subtitle,
@@ -72,7 +72,7 @@ export const Contact = () => {
         <HeadSection
           title="Tuyển sinh"
           subtitle="Contact"
-          desc="Đại học nông lâm năm 2023"
+          desc="Đại học năm 2023"
         />
         <SimpleGrid columns={{ base: 1, lg: 3 }} gap={"24px"} pt={"24px"}>
           <GridItem colSpan={{ base: 1, lg: 2 }}>
@@ -106,8 +106,8 @@ export const Contact = () => {
       </Container>
 
       {/* Animate  */}
-      <Box className="area" bg={"green.700"} w={"100%"}>
-        <List className="circles">
+      <Box className={styles["area"]} bg={"blue.900"} w={"100%"}>
+        <List className={styles["circles"]}>
           <ListItem />
           <ListItem />
           <ListItem />

@@ -1,7 +1,16 @@
 "use client";
 
-import { HeadSection } from "@/components/HeadSection";
-import { Box, Container, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
+import { HeadSectionLight } from "@/components/HeadSection";
+import styles from "@/styles/Couters.module.css";
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  List,
+  ListItem,
+  SimpleGrid,
+} from "@chakra-ui/react";
 import CountUp from "react-countup";
 
 interface ICounter {
@@ -27,10 +36,10 @@ export const Counter = (props: ICounter) => {
         <Flex justifyContent={"center"} flexDir="column" align={"center"}>
           <span
             style={{
-              fontSize: "2rem",
+              fontSize: "2.5rem",
               textAlign: "center",
               fontWeight: "bold",
-              color: "green",
+              color: "#fff",
             }}
             ref={countUpRef}
           />
@@ -44,19 +53,27 @@ export const Counter = (props: ICounter) => {
 };
 
 const counters = [
-  { start: 0, end: 4, suffix: "Ngành học trực tuyến", prefix: "" },
+  { start: 0, end: 7, suffix: "Ngành học trực tuyến", prefix: " " },
   { start: 0, end: 2000, suffix: "Khóa học" },
   { start: 0, end: 10000, suffix: "Sinh viên theo học" },
-  { start: 0, end: 100, suffix: "Học liệu đa phương tiện", prefix: "%" },
+  { start: 0, end: 96, suffix: "Học viên có việc làm", prefix: "%" },
 ];
 
 export const Counters = () => {
   return (
-    <Box py={"48px"}>
-      <Container maxW="6xl">
-        <HeadSection
+    <Box pos={"relative"} zIndex={0}>
+      <Container
+        maxW="6xl"
+        py={"48px"}
+        className={styles["context"]}
+        pos={"absolute"}
+        top={0}
+        left={"50%"}
+        transform={"translateX(-50%)"}
+      >
+        <HeadSectionLight
           title="Những con số ấn tượng"
-          subtitle=""
+          subtitle="numbers"
           desc="Cùng xem những con số ấn tượng của chúng tôi trong suốt thời gian vừa qua"
         />
         <SimpleGrid
@@ -66,7 +83,7 @@ export const Counters = () => {
             lg: "repeat(4, 1fr)",
           }}
           spacing={"8"}
-          pt={"24px"}
+          pt={"36px"}
         >
           {counters.map((counter, index) => (
             <Counter
@@ -79,6 +96,23 @@ export const Counters = () => {
           ))}
         </SimpleGrid>
       </Container>
+
+      {/* Animate  */}
+      <Box className={styles["area"]} bg={"blue.900"} w={"100%"}>
+        <List className={styles["circles"]}>
+          <ListItem />
+          <ListItem />
+          <ListItem />
+          <ListItem />
+          <ListItem />
+          <ListItem />
+          <ListItem />
+          <ListItem />
+          <ListItem />
+          <ListItem />
+          <ListItem />
+        </List>
+      </Box>
     </Box>
   );
 };

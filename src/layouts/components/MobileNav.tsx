@@ -1,5 +1,6 @@
 "use client";
 
+import { useSize } from "@/hooks/useSizeWindow";
 import { menus } from "@/router";
 import {
   Collapse,
@@ -99,6 +100,9 @@ export const MobileNav = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef(null);
 
+  const { size } = useSize();
+  const { width } = size;
+
   return (
     <>
       <IconButton
@@ -111,7 +115,7 @@ export const MobileNav = () => {
         aria-label={"Toggle Navigation"}
       />
       <Drawer
-        isOpen={isOpen}
+        isOpen={width < 992 ? isOpen : false}
         placement="left"
         onClose={onClose}
         finalFocusRef={btnRef}
@@ -138,7 +142,24 @@ export const MobileNav = () => {
             </Stack>
           </DrawerBody>
           <Divider />
-          <DrawerFooter py="24px" px={"12px"}>
+          <DrawerFooter
+            pos={"relative"}
+            _before={{
+              content: "''",
+              width: "5e3px",
+              height: "100%",
+              backgroundImage:
+                "-webkit-gradient(linear,left top,left bottom,from(#004685),to(#004956e6));",
+              position: "absolute",
+              top: 0,
+              right: "36%",
+              zIndex: -1,
+              transform: "skew(-30deg)",
+              WebkitTransformOrigin: "left bottom",
+            }}
+            py="24px"
+            px={"12px"}
+          >
             <HeaderTop />
           </DrawerFooter>
         </DrawerContent>

@@ -115,10 +115,10 @@ export const Motto = () => {
           {reviews.map((review, index) => (
             <SwiperSlide key={index}>
               <Item
-                name={"Đại học nông lâm Thái Nguyên"}
+                name={"Đại học Thái Nguyên"}
                 label={"Hệ đào tạo từ xa"}
                 content={
-                  "Môi trường học tập đề cao tính chủ động và kỹ năng phân tích vấn đề một cách độc lập là tiền đề vững chắc để sinh viên ra trường tiếp nhận kiến thức mới và bắt nhịp với công việc nhanh chóng, dễ dàng. Suốt những năm đại học, sinh viên Trường Đại học Nông Lâm Thái Nguyên được học tập, làm việc cùng đội ngũ giảng viên, nhà khoa học có học hàm, học vị cao. Hơn nữa, với quan điểm lấy người học làm trung tâm, nhà trường đặc biệt chú trọng tinh thần tự học, tự nghiên cứu của sinh viên thông qua những bài giảng gợi mở, đề án thực tế, công trình nghiên cứu khoa học, phương pháp khai thác kho học liệu, …"
+                  "Môi trường học tập đề cao tính chủ động và kỹ năng phân tích vấn đề một cách độc lập là tiền đề vững chắc để sinh viên ra trường tiếp nhận kiến thức mới và bắt nhịp với công việc nhanh chóng, dễ dàng. Suốt những năm đại học, sinh viên Trường Đại học Thái Nguyên được học tập, làm việc cùng đội ngũ giảng viên, nhà khoa học có học hàm, học vị cao. Hơn nữa, với quan điểm lấy người học làm trung tâm, nhà trường đặc biệt chú trọng tinh thần tự học, tự nghiên cứu của sinh viên thông qua những bài giảng gợi mở, đề án thực tế, công trình nghiên cứu khoa học, phương pháp khai thác kho học liệu, …"
                 }
                 title={
                   'Phương pháp giảng dạy hiện đại “LẤY NGƯỜI HỌC LÀM TRUNG TÂM"'

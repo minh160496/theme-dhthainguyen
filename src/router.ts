@@ -13,20 +13,40 @@ export const menus = [
     title: "Ngành học",
     childs: [
       {
-        path: "/nganh-kinh-doanh-xuat-nhap-khau-nong-san",
-        title: "Kinh doanh xuất nhập khẩu nông sản",
+        path: "/nganh-cong-nghe-thong-tin",
+        title: "Công nhệ thông tin",
       },
       {
-        path: "/nganh-cong-nghe-thuc-pham",
-        title: "Công nghệ thực phẩm",
+        path: "/nganh-dien-tu-vien-thong",
+        title: "Điện tử viễn thông",
       },
       {
-        path: "/nganh-nong-nghiep-cong-nghe-cao",
-        title: "Nông nghiệp công nghệ cao",
+        path: "/nganh-quan-tri-kinh-doanh",
+        title: "Quản trị kinh doanh",
       },
       {
-        path: "/nganh-cong-nghe-thuc-pham-tieng-anh",
-        title: "Công nghệ thực phẩm tiếng Anh",
+        path: "/nganh-luat-kinh-te",
+        title: "Luật kinh tế",
+      },
+      {
+        path: "/nganh-thuong-mai-dien-tu",
+        title: "Thương mại điện tử",
+      },
+      {
+        path: "/nganh-ngon-ngu-anh",
+        title: "Ngôn ngữ Anh",
+      },
+      {
+        path: "/nganh-ngon-ngu-trung",
+        title: "Ngôn ngữ Trung",
+      },
+      {
+        path: "/nganh-ke-toan",
+        title: "Kế toán",
+      },
+      {
+        path: "/nganh-tai-chinh-ngan-hang",
+        title: "Tài chính ngân hàng",
       },
     ],
   },

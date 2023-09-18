@@ -1,13 +1,19 @@
 "use client";
 
 import { Loading } from "@/components/Loading";
-import { useDisclosure } from "@chakra-ui/react";
+import { Box, useDisclosure } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 
 const Banner = dynamic(() => import("./Banner").then((mod) => mod.Banner), {
   loading: () => <Loading />,
 });
+const TextScroll = dynamic(
+  () => import("./TextScroll").then((mod) => mod.TextScrollHomePage),
+  {
+    loading: () => <Loading />,
+  }
+);
 const Categorys = dynamic(
   () => import("./Categorys").then((mod) => mod.Categorys),
   {
@@ -46,18 +52,19 @@ const Support = dynamic(() => import("./Support").then((mod) => mod.Support), {
   loading: () => <Loading />,
 });
 
-export const Home = ({ posts }: { posts?: any[] }) => {
+export const Home = ({ posts }: { posts: any[] }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
-    setTimeout(() => {
-      onOpen();
-    }, 1500);
+    onOpen();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>
       <Banner />
+      <Box pos={"sticky"} top={"92px"} zIndex={3}>
+        <TextScroll />
+      </Box>
       <Categorys />
       <Benefit />
       <Motto />
@@ -65,7 +72,7 @@ export const Home = ({ posts }: { posts?: any[] }) => {
       <Counters />
       <Review />
       <Contact />
-      {posts?.length && <Event posts={posts} />}
+      <Event posts={posts} />
 
       <ModalBase isOpen={isOpen} onClose={onClose} onOpen={onOpen} />
     </>

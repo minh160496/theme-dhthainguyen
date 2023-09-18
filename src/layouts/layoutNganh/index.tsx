@@ -1,8 +1,13 @@
 "use client";
 
-import { Contact } from "@/features/home/Contact";
-import { Counters } from "@/features/home/Counters";
-import { Box, Container, Heading } from "@chakra-ui/react";
+import { FormGetFly } from "@/components/FormContact";
+import {
+  Box,
+  Container,
+  GridItem,
+  Heading,
+  SimpleGrid,
+} from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 export const LayoutNganh = ({
@@ -28,11 +33,18 @@ export const LayoutNganh = ({
         </Container>
       </Box>
       <Box>
-        <Container maxW={"6xl"} py="120px">
-          {children}
-        </Container>
-        <Contact />
-        <Counters />
+        <Box
+          bg={"linear-gradient(180deg, rgba(255, 255, 255, 1), #D6F5FE 100%)"}
+        >
+          <Container maxW={"6xl"} py="120px">
+            <SimpleGrid columns={{ base: 1, md: 3 }} spacing={"24px"}>
+              <GridItem colSpan={{ base: 1, md: 2 }}>{children}</GridItem>
+              <GridItem>
+                <FormGetFly />
+              </GridItem>
+            </SimpleGrid>
+          </Container>
+        </Box>
       </Box>
     </>
   );

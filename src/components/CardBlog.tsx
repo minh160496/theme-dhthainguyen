@@ -42,7 +42,7 @@ export const CardBlog = ({
       py={6}
       pos={"relative"}
       transition={"all ease .4s"}
-      _hover={{ transform: "translateY(-24px)" }}
+      _hover={{ transform: "translateY(-6px)" }}
       className="card-blog"
       h={"100%"}
     >

@@ -5,7 +5,7 @@ import Link from "next/link";
 import xss from "xss";
 import { SamePosts } from "./Sames";
 import { Share } from "./Share";
-import "./post.css";
+import styles from "@/styles/Post.module.css";
 
 export const Post = ({
   post,
@@ -15,14 +15,14 @@ export const Post = ({
   relatedPosts: any[];
 }) => {
   return (
-    <article className="post">
-      <div className="post--share">
+    <article className={styles["post"]}>
+      <div className={styles["post--share"]}>
         <Share url={post?.slug || "#"} />
       </div>
       <main>
         {post && (
           <>
-            <div className="post__heading">
+            <div className={styles["post__heading"]}>
               <h1>{post?.title?.rendered}</h1>
               <span>{formatDate(post?.date)}</span>
             </div>
@@ -34,9 +34,9 @@ export const Post = ({
         )}
 
         {!post && (
-          <div className="not-found">
+          <div className={styles["not-found"]}>
             <p>Bài viết này không tồn tại!</p>
-            <Link className="back-new" href={"/tin-tuc"}>
+            <Link className={styles["back-new"]} href={"/tin-tuc"}>
               Trở về trang tin tức
             </Link>
           </div>

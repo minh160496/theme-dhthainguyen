@@ -44,7 +44,7 @@ export const Search = () => {
             <Button variant="outline" rounded={"sm"} mr={3} onClick={onClose}>
               Hủy
             </Button>
-            <Button colorScheme="green" rounded={"sm"}>
+            <Button colorScheme="blue" rounded={"sm"}>
               Tìm kiếm
             </Button>
           </DrawerFooter>

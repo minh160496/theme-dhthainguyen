@@ -52,6 +52,7 @@ export const CardCat = ({
               height={350}
               src={image || `/blog.jpg`}
               alt={title}
+              priority
             />
           </Box>
           <Stack>

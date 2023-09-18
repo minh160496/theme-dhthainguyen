@@ -9,6 +9,7 @@ import {
   Box,
   Container,
   Divider,
+  Grid,
   HStack,
   Heading,
   VStack,
@@ -67,7 +68,7 @@ export const Posts = ({
   posts,
   totalPosts,
 }: {
-  posts: any;
+  posts: any[];
   totalPosts: string | null;
 }) => {
   const router = useRouter();
@@ -88,7 +89,7 @@ export const Posts = ({
             pb="16px"
             color={"white"}
           >
-            Tin tức Đại học Nông lâm
+            Tin tức Đại học Thái Nguyên
           </Heading>
         </Container>
       </Box>
@@ -108,6 +109,11 @@ export const Posts = ({
               }
             </SwiperSlide>
           ))}
+          {posts.length === 0 && (
+            <Grid placeItems={"center"} height={"40vh"}>
+              Dữ liệu đang được chúng tôi cập nhập
+            </Grid>
+          )}
         </SLiderPosts>
       </Box>
 
@@ -123,7 +129,7 @@ export const Posts = ({
               Tin tức
             </Heading>
             <VStack spacing={"16px"}>
-              {posts.map((post: any, index: number) => (
+              {posts?.map((post: any, index: number) => (
                 <CardBlogVert
                   key={index}
                   title={post?.title?.rendered}
@@ -133,6 +139,11 @@ export const Posts = ({
                   path={`/tin-tuc/${post?.slug}`}
                 />
               ))}
+              {posts?.length === 0 && (
+                <Grid placeItems={"center"} height={"40vh"}>
+                  Dữ liệu đang được chúng tôi cập nhập
+                </Grid>
+              )}
             </VStack>
           </Box>
 

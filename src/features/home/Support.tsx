@@ -37,7 +37,7 @@ const accSupport = [
     icon: <MdOutlineLocalShipping />,
     title: "Kho học liệu hoàn toàn miễn phí",
     content:
-      "Tài liệu học tập đa Phương tiện (video, slide, script,...), giáo trình do trường Đại học Nông Lâm Thái Nguyên biên soạn",
+      "Tài liệu học tập đa Phương tiện (video, slide, script,...), giáo trình do trường Đại học Thái Nguyên biên soạn",
   },
 ];
 
@@ -84,7 +84,7 @@ export const Support = () => {
         <HeadSection
           title="Hỗ trợ của chúng tôi"
           subtitle="support"
-          desc="Đại học nông lâm hỗ trợ bạn nhiều lợi ích"
+          desc="Đại học Thái Nguyên hỗ trợ bạn nhiều lợi ích"
         />
         <SimpleGrid columns={{ base: 1, lg: 2 }} gap={"36px"} pt={"24px"}>
           <GridItem>
@@ -96,7 +96,7 @@ export const Support = () => {
               style={{ borderRadius: "12px" }}
             />
             <Text fontWeight={"bold"} textAlign={"center"}>
-              Hỗ trợ của tuaf
+              Hỗ trợ - Đại học Thái Nguyên
             </Text>
           </GridItem>
           <GridItem>

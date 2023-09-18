@@ -1,7 +1,7 @@
 "use client";
 
 import { BtnTheme } from "@/components/BtnTheme";
-import { FormContact } from "@/components/FormContact";
+import { FormGetFly } from "@/components/FormContact";
 import { ModalBase } from "@/components/Modal";
 import { Box, Container, Divider, Flex, useDisclosure } from "@chakra-ui/react";
 import { DesktopNav } from "../components/DeskhopNav";
@@ -13,9 +13,26 @@ export const Header = () => {
   const { onToggle, onOpen, onClose, isOpen } = useDisclosure();
   return (
     <>
-      <Container maxW="6xl" py="6px">
-        <HeaderTop hasSearch />
-      </Container>
+      <Box
+        pos={"relative"}
+        _before={{
+          content: "''",
+          width: "5e3px",
+          height: "100%",
+          backgroundImage:
+            "-webkit-gradient(linear,left top,left bottom,from(#004685),to(#004956e6));",
+          position: "absolute",
+          top: 0,
+          right: "36%",
+          zIndex: -1,
+          transform: "skew(-30deg)",
+          WebkitTransformOrigin: "left bottom",
+        }}
+      >
+        <Container maxW="6xl" py="6px">
+          <HeaderTop hasSearch />
+        </Container>
+      </Box>
       <Divider />
       <Box
         boxShadow="md"
@@ -59,7 +76,7 @@ export const Header = () => {
         </Container>
       </Box>
       <ModalBase isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
-        <FormContact />
+        <FormGetFly title="Để lại thông tin" />
       </ModalBase>
     </>
   );

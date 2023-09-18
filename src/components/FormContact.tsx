@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { Field, Form, Formik } from "formik";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BtnTheme } from "./BtnTheme";
 
 interface IForm {
@@ -191,7 +191,7 @@ export const FormContact = (props: IForm) => {
                   w={"full"}
                   mt={"24px"}
                 >
-                  Giữ chỗ ngay
+                  Đăng ký tư vấn
                 </BtnTheme>
 
                 <Text fontSize={".7rem"} fontWeight={"bold"}>
@@ -219,5 +219,89 @@ export const FormContact = (props: IForm) => {
         </Center>
       )}
     </Box>
+  );
+};
+
+export const FormGetFly = ({ title }: { title?: string }) => {
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const referrer =
+      window.document.referrer !== ""
+        ? window.document.referrer
+        : window.location.origin;
+
+    const regex = /(https?:\/\/.*?)\//g;
+    const match = regex.exec(referrer);
+    const r = match ? match[0] : referrer;
+
+    let finalUrl = r;
+
+    const addParamIfMissing = (paramName: string, cookieName: string) => {
+      if (
+        (!urlParams.has(paramName) || urlParams.get(paramName) === "") &&
+        document.cookie.match(new RegExp(`${cookieName}=([^;]+)`))
+      ) {
+        const match = document?.cookie?.match(
+          new RegExp(`${cookieName}=([^;]+)`)
+        );
+        if (match) {
+          finalUrl += `&${match[0]}`;
+        }
+      } else {
+        finalUrl +=
+          urlParams.get(paramName) !== null
+            ? `&${paramName}=${urlParams.get(paramName)}`
+            : "";
+      }
+    };
+
+    addParamIfMissing("utm_source", "utm_source");
+    addParamIfMissing("utm_campaign", "utm_campaign");
+    addParamIfMissing("utm_medium", "utm_medium");
+    addParamIfMissing("utm_content", "utm_content");
+    addParamIfMissing("utm_term", "utm_term");
+    addParamIfMissing("utm_user", "utm_user");
+    addParamIfMissing("utm_account", "utm_account");
+
+    finalUrl += `&full_url=${encodeURIComponent(window.location.href)}`;
+
+    const iframe = document.createElement("iframe");
+    iframe.setAttribute(
+      "src",
+      `https://aum.getflycrm.com/api/forms/viewform/?key=Gks7frPWuBMzyzUC6CzH0zKCnGrO7OBcnenVzuBlKcWsplsPTm&referrer=${finalUrl}`
+    );
+    iframe.style.width = "100%";
+    iframe.style.height = "400px";
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("marginheight", "0");
+    iframe.setAttribute("marginwidth", "0");
+
+    const container = document.getElementById(
+      "getfly-optin-form-iframe-1694663320597"
+    );
+    if (container) {
+      container.appendChild(iframe);
+    }
+
+    return () => {
+      container?.removeChild(iframe);
+    };
+  }, []);
+
+  return (
+    <>
+      {title && (
+        <Heading
+          as={"h2"}
+          size={{ base: "md", md: "lg" }}
+          textAlign={"center"}
+          color={"blue.700"}
+          pb={"16px"}
+        >
+          Để lại thông tin
+        </Heading>
+      )}
+      <div id="getfly-optin-form-iframe-1694663320597"></div>
+    </>
   );
 };

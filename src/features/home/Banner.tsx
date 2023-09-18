@@ -103,6 +103,7 @@ export const Banner = () => {
               src={"/banner-3.png"}
               width={700}
               height={500}
+              priority
             />
           </Flex>
         </SimpleGrid>
