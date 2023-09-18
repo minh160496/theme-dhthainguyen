@@ -321,16 +321,14 @@ export const FormGetFly2 = ({ title }: { title?: string }) => {
       const urlParams = new URLSearchParams(window.location.search);
       let utmParams = "";
 
-      const match = document.cookie?.match(
-        new RegExp("utm_source" + "=([^;]+)")
-      );
+      const match =
+        document.cookie?.match(new RegExp("utm_source" + "=([^;]+)")) || [];
 
       if (
         (!urlParams.has("utm_source") || urlParams.get("utm_source") === "") &&
         document.cookie.match(new RegExp("utm_source" + "=([^;]+)")) !== null
       ) {
-        utmParams +=
-          "&" + document.cookie.match(new RegExp("utm_source" + "=([^;]+)"))[0];
+        utmParams += "&" + match[0];
       } else {
         utmParams +=
           urlParams.get("utm_source") !== null
@@ -343,9 +341,7 @@ export const FormGetFly2 = ({ title }: { title?: string }) => {
           urlParams.get("utm_campaign") === "") &&
         document.cookie.match(new RegExp("utm_campaign" + "=([^;]+)")) !== null
       ) {
-        utmParams +=
-          "&" +
-          document.cookie.match(new RegExp("utm_campaign" + "=([^;]+)"))[0];
+        utmParams += "&" + match[0];
       } else {
         utmParams +=
           urlParams.get("utm_campaign") !== null
@@ -357,8 +353,7 @@ export const FormGetFly2 = ({ title }: { title?: string }) => {
         (!urlParams.has("utm_medium") || urlParams.get("utm_medium") === "") &&
         document.cookie.match(new RegExp("utm_medium" + "=([^;]+)")) !== null
       ) {
-        utmParams +=
-          "&" + document.cookie.match(new RegExp("utm_medium" + "=([^;]+)"))[0];
+        utmParams += "&" + match[0];
       } else {
         utmParams +=
           urlParams.get("utm_medium") !== null
@@ -371,9 +366,7 @@ export const FormGetFly2 = ({ title }: { title?: string }) => {
           urlParams.get("utm_content") === "") &&
         document.cookie.match(new RegExp("utm_content" + "=([^;]+)")) !== null
       ) {
-        utmParams +=
-          "&" +
-          document.cookie.match(new RegExp("utm_content" + "=([^;]+)"))[0];
+        utmParams += "&" + match[0];
       } else {
         utmParams +=
           urlParams.get("utm_content") !== null
@@ -385,8 +378,7 @@ export const FormGetFly2 = ({ title }: { title?: string }) => {
         (!urlParams.has("utm_term") || urlParams.get("utm_term") === "") &&
         document.cookie.match(new RegExp("utm_term" + "=([^;]+)")) !== null
       ) {
-        utmParams +=
-          "&" + document.cookie.match(new RegExp("utm_term" + "=([^;]+)"))[0];
+        utmParams += "&" + match[0];
       } else {
         utmParams +=
           urlParams.get("utm_term") !== null
@@ -398,8 +390,7 @@ export const FormGetFly2 = ({ title }: { title?: string }) => {
         (!urlParams.has("utm_user") || urlParams.get("utm_user") === "") &&
         document.cookie.match(new RegExp("utm_user" + "=([^;]+)")) !== null
       ) {
-        utmParams +=
-          "&" + document.cookie.match(new RegExp("utm_user" + "=([^;]+)"))[0];
+        utmParams += "&" + match[0];
       } else {
         utmParams +=
           urlParams.get("utm_user") !== null
@@ -412,9 +403,7 @@ export const FormGetFly2 = ({ title }: { title?: string }) => {
           urlParams.get("utm_account") === "") &&
         document.cookie.match(new RegExp("utm_account" + "=([^;]+)")) !== null
       ) {
-        utmParams +=
-          "&" +
-          document.cookie.match(new RegExp("utm_account" + "=([^;]+)"))[0];
+        utmParams += "&" + match[0];
       } else {
         utmParams +=
           urlParams.get("utm_account") !== null

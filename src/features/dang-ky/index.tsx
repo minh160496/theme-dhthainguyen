@@ -1,4 +1,4 @@
-import { FormGetFly } from "@/components/FormContact";
+import { FormGetFly2 } from "@/components/FormContact";
 import { Box, Container, Heading } from "@chakra-ui/react";
 
 export const Dangky = () => {
@@ -19,7 +19,7 @@ export const Dangky = () => {
       </Box>
       <Box bg={"linear-gradient(180deg, rgba(255, 255, 255, 1), #D6F5FE 100%)"}>
         <Container maxW={"6xl"} py="120px">
-          <FormGetFly title="Vui lòng điền thông tin" />
+          <FormGetFly2 title="Vui lòng điền thông tin" />
         </Container>
       </Box>
     </>
