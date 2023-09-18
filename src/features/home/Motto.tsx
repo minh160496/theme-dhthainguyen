@@ -103,7 +103,7 @@ export const Motto = () => {
       <Container maxW="9xl" overflow={"hidden"}>
         <HeadSection
           title="Phương trâm giáo dục"
-          subtitle="motto"
+          subtitle="phương châm"
           desc="Cùng lắng nghe phương châm trong giáo dục của chúng tôi"
         />
         <StyledSwiper

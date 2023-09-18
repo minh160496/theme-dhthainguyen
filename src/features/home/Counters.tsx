@@ -73,7 +73,7 @@ export const Counters = () => {
       >
         <HeadSectionLight
           title="Những con số ấn tượng"
-          subtitle="numbers"
+          subtitle="những con số"
           desc="Cùng xem những con số ấn tượng của chúng tôi trong suốt thời gian vừa qua"
         />
         <SimpleGrid

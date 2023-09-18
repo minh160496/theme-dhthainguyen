@@ -71,7 +71,7 @@ export const Contact = () => {
       >
         <HeadSection
           title="Tuyển sinh"
-          subtitle="Contact"
+          subtitle="liên hệ"
           desc="Đại học năm 2023"
         />
         <SimpleGrid columns={{ base: 1, lg: 3 }} gap={"24px"} pt={"24px"}>

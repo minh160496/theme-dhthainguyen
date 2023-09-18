@@ -109,7 +109,7 @@ export const Review = () => {
     >
       <Container maxW={"7xl"} py={16} as={Stack} spacing={12}>
         <HeadSection
-          subtitle="Review"
+          subtitle="đánh giá"
           title="Đánh giá của học viên"
           desc="Cùng lắng nghe những đánh giá của học viên đã tốt nghiệp hệ đào tạo từ xa tại Đại học Thái Nguyên"
         />

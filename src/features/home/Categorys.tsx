@@ -67,7 +67,7 @@ export const Categorys = () => {
       <Container maxW="6xl">
         <HeadSection
           title="Chuyên ngành đào tạo"
-          subtitle="major"
+          subtitle="chuyên ngành"
           desc="Đào tạo đa ngành, chương trình học tiết kiệm thời gian"
         />
         <SimpleGrid spacing={"8"} columns={{ base: 1, md: 2, lg: 4 }}>

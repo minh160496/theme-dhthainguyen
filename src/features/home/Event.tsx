@@ -10,7 +10,7 @@ export const Event = ({ posts }: { posts: any[] }) => {
     <Container maxW={"6xl"} py={"64px"}>
       <HeadSection
         title="Tin tức"
-        subtitle="news"
+        subtitle="tin tức"
         desc="Đừng vội lướt qua những tin tức cập nhật từ chúng tôi"
       />
       <SimpleGrid columns={{ base: 1, md: 1, lg: 3 }} gap={"24px"}>

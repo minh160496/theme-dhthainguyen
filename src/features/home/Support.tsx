@@ -83,7 +83,7 @@ export const Support = () => {
       <Container maxW={"6xl"}>
         <HeadSection
           title="Hỗ trợ của chúng tôi"
-          subtitle="support"
+          subtitle="hỗ trợ"
           desc="Đại học Thái Nguyên hỗ trợ bạn nhiều lợi ích"
         />
         <SimpleGrid columns={{ base: 1, lg: 2 }} gap={"36px"} pt={"24px"}>
