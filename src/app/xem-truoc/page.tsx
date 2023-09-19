@@ -38,7 +38,7 @@ const Page = async () => {
 
   return (
     <>
-      <Previews posts={posts} />
+      <Previews posts={posts || []} />
     </>
   );
 };
