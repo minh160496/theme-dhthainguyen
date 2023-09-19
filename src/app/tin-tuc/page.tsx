@@ -2,12 +2,12 @@
 
 import { Posts } from "@/features/posts";
 
-const getPost = async ({ page }: { page: string }) => {
+const getPosts = async ({ page }: { page: string }) => {
   const api_url = process.env.API_URL || "";
   const res = await fetch(
     `${api_url}/posts?_embed&per_page=10&status=publish&page=${page}`,
     {
-      next: { revalidate: 3600 },
+      next: { revalidate: 1800 },
     }
   );
   const totalPosts = res.headers.get("X-WP-Total");
@@ -40,7 +40,7 @@ const Page = async ({
   searchParams?: { [key: string]: string | string[] | undefined };
 }) => {
   const page = searchParams?.page || 1;
-  const { posts, totalPosts } = await getPost({
+  const { posts, totalPosts } = await getPosts({
     page: typeof page === "string" ? page : "1",
   });
   const news = posts?.filter(

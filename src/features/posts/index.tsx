@@ -97,16 +97,14 @@ export const Posts = ({
         <SLiderPosts>
           {posts?.map((post: any, index: number) => (
             <SwiperSlide key={index}>
-              {
-                <CardBlog
-                  date={post?.date ? formatDate(post.date) : ""}
-                  key={index}
-                  title={post?.title?.rendered}
-                  desc={xss(post.excerpt.rendered)}
-                  image={post?.featured_image || ""}
-                  path={`/tin-tuc/${post?.slug}`}
-                />
-              }
+              <CardBlog
+                date={post?.date ? formatDate(post.date) : ""}
+                key={index}
+                title={post?.title?.rendered}
+                desc={xss(post.excerpt.rendered)}
+                image={post?.featured_image || ""}
+                path={`/tin-tuc/${post?.slug}`}
+              />
             </SwiperSlide>
           ))}
           {posts.length === 0 && (

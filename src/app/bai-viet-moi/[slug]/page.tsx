@@ -1,50 +1,22 @@
 "server only";
 
 import { Post } from "@/features/post";
-import type { Metadata, ResolvingMetadata } from "next";
-
-type Props = {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
 
 const api_url = process.env.API_URL || "";
-
-export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  // read route params
-  const slug = params.slug;
-
-  // fetch data
-  const postArr = await fetch(`${api_url}/posts?slug=${slug}`, {
-    next: { revalidate: 1800 },
-  }).then((res) => res.json());
-
-  const post = postArr[0];
-  // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || [];
-
-  return {
-    title: post.title?.rendered || "Tin tức",
-    openGraph: {
-      images: ["/some-specific-page-image.jpg", ...previousImages],
-    },
-  };
-}
-
-const getPost = async ({ slug }: { slug: string }) => {
+const getLatestPosts = async () => {
   try {
-    const res = await fetch(`${api_url}/posts?slug=${slug}`, {
-      next: { revalidate: 1800 },
-    });
-    const posts = await res.json();
+    const res = await fetch(
+      `${api_url}/posts?posts?per_page=10&orderby=date&order=desc`,
+      {
+        next: { revalidate: 10 },
+      }
+    );
+    const posts: any[] = await res.json();
 
-    return posts[0];
+    return { posts: posts };
   } catch (error) {
     console.log(error);
-    return null;
+    return { posts: [] };
   }
 };
 
@@ -55,7 +27,9 @@ const getSamePosts = async (post: any) => {
     // Lấy danh sách các bài viết cùng thể loại
     const resRelatedPosts = await fetch(
       `${api_url}/posts?categories=${categoryId}&exclude=${post?.id}&per_page=3&_embed`,
-      { next: { revalidate: 1800 } }
+      {
+        next: { revalidate: 10 },
+      }
     );
 
     const relatedPosts: any[] = await resRelatedPosts.json();
@@ -76,7 +50,8 @@ const getSamePosts = async (post: any) => {
 };
 
 const Page = async ({ params }: { params: { slug: string } }) => {
-  const post = await getPost({ slug: params.slug });
+  const { posts } = await getLatestPosts();
+  const post = posts?.find((post) => post.slug === params.slug);
   const relatedPosts = await getSamePosts(post);
 
   return (
