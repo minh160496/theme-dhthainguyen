@@ -119,14 +119,22 @@ export const Footer = () => {
               <Stack direction={"row"} spacing={6}>
                 <SocialButton
                   label={"Twitter"}
-                  href={"https://www.facebook.com/groups/vsteponline"}
+                  href={"https://www.facebook.com/TNUElearning?locale=vi_VN"}
                 >
                   <FaFacebook />
                 </SocialButton>
-                <SocialButton label={"YouTube"} href={"#"}>
+                <SocialButton
+                  label={"YouTube"}
+                  href={
+                    "https://www.youtube.com/@trungtamaotaotuxaaihocthai6708 "
+                  }
+                >
                   <FaYoutube />
                 </SocialButton>
-                <SocialButton label={"Instagram"} href={"#"}>
+                <SocialButton
+                  label={"Instagram"}
+                  href={"https://www.tiktok.com/@tnuelearning"}
+                >
                   <FaTiktok />
                 </SocialButton>
               </Stack>

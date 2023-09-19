@@ -30,14 +30,14 @@ const accSupport = [
     icon: <SlCalender />,
     title: "Thời gian đào tạo",
     content:
-      "Thời gian đào tạo từ 2 - 2,5 năm giúp người học có thể học vượt để rút ngắn thời gian học tập theo quy định đào tạo tín chỉ.",
+      "Thời gian đào tạo tùy vào đối tượng từ 2-2,5 năm. Người học có thể rút ngắn thời gian học tập theo quy chế đào tạo",
   },
 
   {
     icon: <MdOutlineLocalShipping />,
     title: "Kho học liệu hoàn toàn miễn phí",
     content:
-      "Tài liệu học tập đa Phương tiện (video, slide, script,...), giáo trình do trường Đại học Thái Nguyên biên soạn",
+      "Tài liệu học tập đa Phương tiện (video, slide, script,...), giáo trình do Đại học Thái Nguyên biên soạn",
   },
 ];
 

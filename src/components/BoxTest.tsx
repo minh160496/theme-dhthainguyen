@@ -1,4 +1,10 @@
-import { Heading, ListItem, UnorderedList, VStack } from "@chakra-ui/react";
+import {
+  HStack,
+  Heading,
+  ListItem,
+  UnorderedList,
+  VStack,
+} from "@chakra-ui/react";
 import { BtnTheme } from "./BtnTheme";
 
 export const BoxTest = ({
@@ -15,8 +21,13 @@ export const BoxTest = ({
   list2?: string[];
 }) => {
   return (
-    <VStack rounded={"2xl"} border={"1px solid teal"} padding={"16px"}>
-      <Heading as={"h3"} size={"md"} textAlign={"center"}>
+    <VStack
+      rounded={"2xl"}
+      border={"1px solid teal"}
+      padding={"16px"}
+      alignItems={"start"}
+    >
+      <Heading as={"h3"} size={"md"} textAlign={"center"} w={"100%"}>
         {title1}
       </Heading>
 
@@ -28,7 +39,7 @@ export const BoxTest = ({
 
       {title2 && (
         <>
-          <Heading as={"h3"} size={"md"} textAlign={"center"}>
+          <Heading as={"h3"} size={"md"} textAlign={"center"} w={"100%"}>
             {title2}
           </Heading>
 
@@ -39,7 +50,9 @@ export const BoxTest = ({
           </UnorderedList>
         </>
       )}
-      <BtnTheme>{label}</BtnTheme>
+      <HStack justify={"center"} w={"100%"}>
+        <BtnTheme>{label}</BtnTheme>
+      </HStack>
     </VStack>
   );
 };

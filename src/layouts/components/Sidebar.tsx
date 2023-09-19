@@ -15,9 +15,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { BiLogoTiktok } from "react-icons/bi";
 import { BsFillTelephoneFill } from "react-icons/bs";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaYoutube } from "react-icons/fa";
 import { SiZalo } from "react-icons/si";
-// import { FormGetFly } from "@/components/FormContact";
 
 export const Item = ({
   path,
@@ -101,17 +100,33 @@ export const Sidebar = ({ sticky }: { sticky?: string }) => {
           borderColor={"gray.300"}
         >
           <VStack spacing={"16px"}>
-            <Button leftIcon={<FaFacebook />} colorScheme="facebook" w={"full"}>
+            <Button
+              leftIcon={<FaFacebook />}
+              colorScheme="facebook"
+              w={"full"}
+              as={Link}
+              href={"https://www.facebook.com/TNUElearning?locale=vi_VN"}
+            >
               Fanpage
             </Button>
-            <Button leftIcon={<SiZalo />} colorScheme="facebook" w={"full"}>
-              Zalo hỗ trợ
+
+            <Button
+              leftIcon={<FaYoutube />}
+              colorScheme="red"
+              w={"full"}
+              as={Link}
+              href={"https://www.youtube.com/@trungtamaotaotuxaaihocthai6708 "}
+            >
+              Youtube
             </Button>
+
             <Button
               leftIcon={<BiLogoTiktok />}
               bg="blackAlpha.800"
               w={"full"}
               color={"whiteAlpha.800"}
+              as={Link}
+              href={"https://www.tiktok.com/@tnuelearning"}
             >
               Tiktok
             </Button>

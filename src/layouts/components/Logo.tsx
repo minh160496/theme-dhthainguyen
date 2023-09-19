@@ -6,9 +6,10 @@ export const Logo = () => {
     <Link href="/">
       <Image
         priority
-        width={100}
-        height={100}
-        src={`/logo.png`}
+        width={70}
+        height={70}
+        style={{ borderRadius: "50%" }}
+        src={`/logo-dhthainguyen.png`}
         alt="logo đại học Thái nguyên"
       />
     </Link>

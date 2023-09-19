@@ -102,7 +102,7 @@ export const Motto = () => {
     <Box py={"48px"}>
       <Container maxW="9xl" overflow={"hidden"}>
         <HeadSection
-          title="Phương trâm giáo dục"
+          title="Phương châm giáo dục"
           subtitle="phương châm"
           desc="Cùng lắng nghe phương châm trong giáo dục của chúng tôi"
         />
