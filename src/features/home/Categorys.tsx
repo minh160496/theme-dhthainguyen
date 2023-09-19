@@ -70,7 +70,7 @@ export const Categorys = () => {
           subtitle="chuyên ngành"
           desc="Đào tạo đa ngành, chương trình học tiết kiệm thời gian"
         />
-        <SimpleGrid spacing={"8"} columns={{ base: 1, md: 2, lg: 4 }}>
+        <SimpleGrid spacing={"8"} columns={{ base: 1, md: 2, lg: 3 }}>
           {categotys.map((categoty, index) => (
             <CardCat
               key={index}
