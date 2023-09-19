@@ -1,8 +1,38 @@
 "server only";
 
 import { Post } from "@/features/post";
+import type { Metadata, ResolvingMetadata } from "next";
+
+type Props = {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
 const api_url = process.env.API_URL || "";
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const slug = params.slug;
+
+  // fetch data
+  const postArr = await fetch(`${api_url}/posts?slug=${slug}`).then((res) =>
+    res.json()
+  );
+
+  const post = postArr[0];
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: post.title?.rendered || "Tin tức",
+    openGraph: {
+      images: ["/some-specific-page-image.jpg", ...previousImages],
+    },
+  };
+}
 
 const getPost = async ({ slug }: { slug: string }) => {
   try {

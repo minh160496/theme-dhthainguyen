@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Tin tức",
-  description: "Tin tức về Evstep",
+  description: "Tin tức và thông báo tuyển sinh về đại học Thái Nguyên",
 };
 
 const Layout = ({ children }: { children: React.ReactNode }) => {

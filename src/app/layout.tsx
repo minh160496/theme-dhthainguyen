@@ -6,8 +6,8 @@ import type { Metadata } from "next";
 import { Providers } from "./provider";
 
 export const metadata: Metadata = {
-  title: "Trang chủ EVstep",
-  description: "Evstep - luyện thi tiếng anh",
+  title: "Trang chủ Đại học Thái Nguyên",
+  description: "Đại học Thái Nguyên - tuyển sinh hệ đào tạo từ xa",
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {

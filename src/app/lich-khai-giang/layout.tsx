@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Lịch khai giảng tuaf",
-  description: "Thông tin chi tiết lịch khai giảng hệ từ xa đại học nôn lâm",
+  title: "Lịch khai giảng",
+  description:
+    "Thông tin chi tiết lịch khai giảng hệ từ xa đại học Thái Nguyên",
 };
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
