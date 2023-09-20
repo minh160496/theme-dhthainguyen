@@ -4,8 +4,11 @@ import {
   ListItem,
   UnorderedList,
   VStack,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { BtnTheme } from "./BtnTheme";
+import { FormGetFly1 } from "./FormContact";
+import { ModalBase } from "./Modal";
 
 export const BoxTest = ({
   title1,
@@ -20,39 +23,45 @@ export const BoxTest = ({
   list1?: string[];
   list2?: string[];
 }) => {
+  const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
   return (
-    <VStack
-      rounded={"2xl"}
-      border={"1px solid teal"}
-      padding={"16px"}
-      alignItems={"start"}
-    >
-      <Heading as={"h3"} size={"md"} textAlign={"center"} w={"100%"}>
-        {title1}
-      </Heading>
+    <>
+      <VStack
+        rounded={"2xl"}
+        border={"1px solid teal"}
+        padding={"16px"}
+        alignItems={"start"}
+      >
+        <Heading as={"h3"} size={"md"} textAlign={"center"} w={"100%"}>
+          {title1}
+        </Heading>
 
-      <UnorderedList>
-        {list1?.map((item, index) => (
-          <ListItem key={index}>{item}</ListItem>
-        ))}
-      </UnorderedList>
+        <UnorderedList>
+          {list1?.map((item, index) => (
+            <ListItem key={index}>{item}</ListItem>
+          ))}
+        </UnorderedList>
 
-      {title2 && (
-        <>
-          <Heading as={"h3"} size={"md"} textAlign={"center"} w={"100%"}>
-            {title2}
-          </Heading>
+        {title2 && (
+          <>
+            <Heading as={"h3"} size={"md"} textAlign={"center"} w={"100%"}>
+              {title2}
+            </Heading>
 
-          <UnorderedList>
-            {list2?.map((item, index) => (
-              <ListItem key={index}>{item}</ListItem>
-            ))}
-          </UnorderedList>
-        </>
-      )}
-      <HStack justify={"center"} w={"100%"}>
-        <BtnTheme>{label}</BtnTheme>
-      </HStack>
-    </VStack>
+            <UnorderedList>
+              {list2?.map((item, index) => (
+                <ListItem key={index}>{item}</ListItem>
+              ))}
+            </UnorderedList>
+          </>
+        )}
+        <HStack justify={"center"} w={"100%"}>
+          <BtnTheme onClick={onToggle}>{label}</BtnTheme>
+        </HStack>
+      </VStack>
+      <ModalBase isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
+        <FormGetFly1 title="Đăng ký tư vấn" />
+      </ModalBase>
+    </>
   );
 };

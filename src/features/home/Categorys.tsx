@@ -57,7 +57,7 @@ export const categotys = [
     image: "/tai-chinh-ngan-hang.png",
     path: "nganh-tai-chinh-ngan-hang",
     title: "Ngành tài chính ngân hàng",
-    desc: "Kế toán là công việc thu thập và xử lý dữ liệu kinh doanh, tài chính của tổ chức để cung cấp thông tin cho việc ra quyết định quản lý",
+    desc: "Tài chính ngân hàng là một ngành học khá là rộng, liên quan đến tất cả các dịch vụ giao dịch tài chính Ngân hàng, lưu thông và vận hành tiền tệ. Ngành Tài chính ngân hàng có thể chia thành nhiều lĩnh vực chuyên ngành khác nhau như ngân hàng, tài chính doanh nghiệp, tài chính thuế, tài chính bảo hiểm",
   },
 ];
 

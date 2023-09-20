@@ -4,10 +4,13 @@ import {
   Box,
   Container,
   Flex,
+  GridItem,
   Heading,
+  ListItem,
   SimpleGrid,
   Stack,
   Text,
+  UnorderedList,
   VisuallyHidden,
   chakra,
   useColorModeValue,
@@ -20,6 +23,7 @@ import { InputRes } from "../../components/InputRes";
 import { Logo } from "../components/Logo";
 import { ModalBase } from "@/components/Modal";
 import { FormGetFly1 } from "@/components/FormContact";
+import Image from "next/image";
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
@@ -79,19 +83,45 @@ export const Footer = () => {
               />
             </Box>
           </Flex>
-          <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
-            <Stack align={"flex-start"}>
-              <ListHeader>Thông tin liên hệ</ListHeader>
-              <Box as={Link} href={"#"}>
-                Đại học Thái nguyên - trạm tuyển sinh AUM
-              </Box>
-              <Box as={Link} href={"tel:0914709118"}>
-                Hotline: 0914709118
-              </Box>
-              <Box as={Link} href={"mailto:daihoctructuyen@tnu.edu.vn"}>
-                Email: daihoctructuyen@tnu.edu.vn
-              </Box>
-            </Stack>
+          <SimpleGrid columns={{ base: 1, sm: 2, md: 5 }} spacing={8}>
+            <GridItem colSpan={{ base: 1, sm: 2 }}>
+              <Stack align={"flex-start"}>
+                <ListHeader>Thông tin liên hệ</ListHeader>
+                <Box as={Link} href={"#"}>
+                  Văn phòng tuyển sinh:
+                </Box>
+                <UnorderedList>
+                  <ListItem>
+                    Hà Nội: Số 116 Trần Vĩ, Phường Mai Dịch, Quận Cầu Giấy,
+                    Thành Phố Hà Nội
+                  </ListItem>
+                  <ListItem>
+                    Hồ Chí Minh: Số 91 Ký Con, phường Nguyễn Thái Bình, Quận 1,
+                    TP Hồ Chí Minh
+                  </ListItem>
+                </UnorderedList>
+                <Box as={Link} href={"tel:0914709118"}>
+                  Hotline: 0914709118
+                </Box>
+                <Box as={Link} href={"mailto:daihoctructuyen@tnu.edu.vn"}>
+                  Email: daihoctructuyen@tnu.edu.vn
+                </Box>
+                <Box
+                  as={Link}
+                  href={"mailto:daihoctructuyen@tnu.edu.vn"}
+                  textDecor={"underline"}
+                >
+                  Group Facebook: daihocthainguyen - elearning
+                </Box>
+                <Box
+                  as={Link}
+                  href={"mailto:daihoctructuyen@tnu.edu.vn"}
+                  textDecor={"underline"}
+                >
+                  Fanpage: daihocthainguyen - elearning
+                </Box>
+              </Stack>
+            </GridItem>
 
             <Stack align={"flex-start"}>
               <ListHeader>Hỗ trợ</ListHeader>
@@ -110,30 +140,30 @@ export const Footer = () => {
             </Stack>
 
             <Stack align={"flex-start"}>
-              <ListHeader>Nhận diện</ListHeader>
-              <Logo />
+              <ListHeader>Hợp tác tuyển sinh</ListHeader>
+              <Link href={"https://timdoitac.aum.edu.vn/"}>
+                <Image
+                  src={"/timdoitac.jpg"}
+                  width={150}
+                  height={100}
+                  alt="Tìm đối tác"
+                  style={{ borderRadius: "6px" }}
+                />
+              </Link>
             </Stack>
 
             <Stack align={"flex-start"}>
               <ListHeader>Mạng xã hội</ListHeader>
               <Stack direction={"row"} spacing={6}>
                 <SocialButton
-                  label={"Twitter"}
-                  href={"https://www.facebook.com/TNUElearning?locale=vi_VN"}
+                  label={"Facebook"}
+                  href={"https://www.facebook.com/TNUElearning"}
                 >
                   <FaFacebook />
                 </SocialButton>
                 <SocialButton
-                  label={"YouTube"}
-                  href={
-                    "https://www.youtube.com/@trungtamaotaotuxaaihocthai6708 "
-                  }
-                >
-                  <FaYoutube />
-                </SocialButton>
-                <SocialButton
-                  label={"Instagram"}
-                  href={"https://www.tiktok.com/@tnuelearning"}
+                  label={"Tiktok"}
+                  href={"https://www.tiktok.com/@tnuelearning?"}
                 >
                   <FaTiktok />
                 </SocialButton>

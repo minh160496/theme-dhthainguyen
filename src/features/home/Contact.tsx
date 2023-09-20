@@ -1,48 +1,18 @@
 "use client";
 
+import { HeadSectionLight } from "@/components/HeadSection";
+import styles from "@/styles/Home.module.css";
 import {
   Box,
   Container,
   GridItem,
-  Heading,
   List,
   ListIcon,
   ListItem,
   SimpleGrid,
-  Text,
-  VStack,
 } from "@chakra-ui/react";
 import { AiFillStar } from "react-icons/ai";
-import { FormContact, FormGetFly2 } from "../../components/FormContact";
-import styles from "@/styles/Home.module.css";
-
-const HeadSection = ({
-  subtitle,
-  title,
-  desc,
-}: {
-  subtitle: string;
-  title: string;
-  desc: string;
-}) => {
-  return (
-    <VStack justify={"center"}>
-      <Text color={"#FA692E"}>{subtitle}</Text>
-      <Heading
-        as={"h2"}
-        size={{ base: "sm", md: "lg" }}
-        textAlign={"center"}
-        textTransform={"uppercase"}
-        color={"whiteAlpha.900"}
-      >
-        {title}
-      </Heading>
-      <Text color={"whiteAlpha.900"} fontWeight={"sm"}>
-        {desc}
-      </Text>
-    </VStack>
-  );
-};
+import { FormGetFly2 } from "../../components/FormContact";
 
 const lists = [
   "KHÔNG phải thi đầu vào, chỉ xét tuyển hồ sơ",
@@ -69,10 +39,10 @@ export const Contact = () => {
         transform={"translateX(-50%)"}
         className="context"
       >
-        <HeadSection
+        <HeadSectionLight
           title="Tuyển sinh"
           subtitle="liên hệ"
-          desc="Đại học năm 2023"
+          desc="Hệ đại học từ xa 2023"
         />
         <SimpleGrid columns={{ base: 1, lg: 3 }} gap={"24px"} pt={"24px"}>
           <GridItem colSpan={{ base: 1, lg: 2 }}>

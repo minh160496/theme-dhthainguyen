@@ -18,7 +18,7 @@ export const Nnt = () => {
           "Hướng dẫn viên du lịch, làm lễ tân trong nhà hàng, khách sạn",
           "Tiếp viên hàng không, nhân viên an ninh tại cảng hàng không",
         ]}
-        label="Bắt đầu kiểm tra"
+        label="Đăng ký tư vấn"
       />
     </LayoutNganh>
   );

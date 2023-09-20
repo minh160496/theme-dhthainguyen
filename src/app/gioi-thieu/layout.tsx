@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Giới thiệu - đại học Thái Nguyên",
+  title: "Giới thiệu - Đại học Thái Nguyên",
   description: "Thông tin giới thiệu vể Đại học Thái Nguyên",
 };
 

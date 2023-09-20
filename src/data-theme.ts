@@ -16,7 +16,7 @@ export const data_themes = {
       childs: [
         {
           path: "/nganh-cong-nghe-thong-tin",
-          title: "Công nhệ thông tin",
+          title: "Công nghệ thông tin",
         },
         {
           path: "/nganh-dien-tu-vien-thong",

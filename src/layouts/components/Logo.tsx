@@ -10,7 +10,7 @@ export const Logo = () => {
         height={80}
         style={{ borderRadius: "50%" }}
         src={`/logo-dhthainguyen.png`}
-        alt="logo đại học Thái nguyên"
+        alt="logo Đại học Thái nguyên"
       />
     </Link>
   );

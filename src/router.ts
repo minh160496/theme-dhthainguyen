@@ -14,7 +14,7 @@ export const menus = [
     childs: [
       {
         path: "/nganh-cong-nghe-thong-tin",
-        title: "Công nhệ thông tin",
+        title: "Công nghệ thông tin",
       },
       {
         path: "/nganh-dien-tu-vien-thong",
@@ -30,7 +30,7 @@ export const menus = [
       },
       {
         path: "/nganh-thuong-mai-dien-tu",
-        title: "Thương mại điện tử",
+        title: "Thương mại điện tử và Marketing số",
       },
       {
         path: "/nganh-ngon-ngu-anh",

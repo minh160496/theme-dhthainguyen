@@ -7,6 +7,7 @@
 .area {
   position: relative;
   z-index: -1;
+  height: 940px;
 }
 
 .circles {
@@ -118,39 +119,33 @@
   }
 }
 
-@media (min-width: 350px) {
+@media (min-width: 480px) {
   .area {
-    height: 1120px;
-  }
-}
-
-@media (min-width: 450px) {
-  .area {
-    height: 1000px;
-  }
-}
-
-@media (min-width: 520px) {
-  .area {
-    height: 950px;
+    height: 940px;
   }
 }
 
 @media (min-width: 768px) {
   .area {
-    height: 900px;
+    height: 920px;
   }
 }
 
-@media (min-width: 998px) {
+@media (min-width: 768px) {
   .area {
-    height: 620px;
+    height: 840px;
+  }
+}
+
+@media (min-width: 992px) {
+  .area {
+    height: 560px;
   }
 }
 
 @media (min-width: 1280px) {
   .area {
-    height: 660px;
+    height: 540px;
   }
 }
 
