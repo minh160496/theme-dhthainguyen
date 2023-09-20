@@ -27,7 +27,7 @@ export async function generateMetadata(
   const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    title: post.title?.rendered || "Tin tức",
+    title: post?.title?.rendered || "Tin tức",
     openGraph: {
       images: ["/some-specific-page-image.jpg", ...previousImages],
     },
