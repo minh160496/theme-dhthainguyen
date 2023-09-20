@@ -7,7 +7,7 @@
 .area {
   position: relative;
   z-index: -1;
-  height: 940px;
+  height: 1000px;
 }
 
 .circles {
@@ -121,31 +121,31 @@
 
 @media (min-width: 480px) {
   .area {
-    height: 940px;
+    height: 1000px;
   }
 }
 
 @media (min-width: 768px) {
   .area {
-    height: 920px;
+    height: 980px;
   }
 }
 
 @media (min-width: 768px) {
   .area {
-    height: 840px;
+    height: 900px;
   }
 }
 
 @media (min-width: 992px) {
   .area {
-    height: 560px;
+    height: 620px;
   }
 }
 
 @media (min-width: 1280px) {
   .area {
-    height: 540px;
+    height: 600px;
   }
 }
 

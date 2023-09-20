@@ -325,10 +325,11 @@ const comonForm = ({ id, href }: { id: string; href: string }) => {
   f.setAttribute("marginheight", "0");
   f.setAttribute("marginwidth", "0");
   const s = document.getElementById(id);
-  s?.appendChild(f);
+
+  if (!s?.hasChildNodes()) s?.appendChild(f);
 };
 
-export const FormGetFly1 = ({ title }: { title?: string }) => {
+export const FormGetFly2 = ({ title }: { title?: string }) => {
   useEffect(() => {
     comonForm({
       id: "getfly-optin-form-iframe-1695175881155",
@@ -354,7 +355,7 @@ export const FormGetFly1 = ({ title }: { title?: string }) => {
   );
 };
 
-export const FormGetFly2 = ({ title }: { title?: string }) => {
+export const FormGetFly1 = ({ title }: { title?: string }) => {
   useEffect(() => {
     comonForm({
       id: "getfly-optin-form-iframe-1695175842604",
