@@ -28,9 +28,9 @@ export async function generateMetadata(
 
   return {
     title: post?.title?.rendered || "Tin tức",
-    openGraph: {
-      images: ["/some-specific-page-image.jpg", ...previousImages],
-    },
+    description:
+      post?.excerpt?.rendered ||
+      "Tin tức và thông báo tuyển sinh về Đại học Thái Nguyên",
   };
 }
 
