@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import { LuPhone } from "react-icons/lu";
 import { MdOutlineMail } from "react-icons/md";
 import { Search } from "./Search";
+import { Logo } from "./Logo";
 
 export const Tags = ({
   label,
@@ -32,7 +33,7 @@ export const Tags = ({
 export const HeaderTop = ({ hasSearch }: { hasSearch?: boolean }) => {
   return (
     <HStack align={"center"} justify={"space-between"}>
-      <HStack>
+      <HStack flex={1}>
         <Tags type="tel" label="0914709118">
           <Icon as={LuPhone} />
         </Tags>
@@ -41,7 +42,20 @@ export const HeaderTop = ({ hasSearch }: { hasSearch?: boolean }) => {
           <Icon as={MdOutlineMail} />
         </Tags>
       </HStack>
-      {hasSearch && <Search />}
+
+      <HStack
+        flex={1}
+        justify={"center"}
+        display={{ base: "none", lg: "flex" }}
+      >
+        <Logo />
+      </HStack>
+
+      {hasSearch && (
+        <HStack flex={1} justify={"end"}>
+          <Search />
+        </HStack>
+      )}
     </HStack>
   );
 };

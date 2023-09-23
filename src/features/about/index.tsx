@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const About = () => {
   return (
-    <Box>
+    <Box color={"blue.800"}>
       <Box bg="radial-gradient(circle, rgba(5,70,89,1) 2%, rgba(98,212,245,1) 100%, rgba(252,89,52,1) 100%)">
         <Container maxW={"6xl"} py="60px">
           <Heading

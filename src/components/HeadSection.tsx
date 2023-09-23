@@ -17,7 +17,7 @@ export const HeadSection = ({
         size={{ base: "sm", md: "lg" }}
         textAlign={"center"}
         textTransform={"uppercase"}
-        color={"#193a43"}
+        color={"blue.800"}
       >
         {title}
       </Heading>

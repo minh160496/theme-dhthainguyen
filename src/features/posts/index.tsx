@@ -65,14 +65,20 @@ const StyledPaginate = styled(ReactPaginate)`
 `;
 
 export const Posts = ({
-  posts,
-  totalPosts,
+  news,
+  notifis,
+  totalNews,
+  totalNotifis,
+  title,
 }: {
-  posts: any[];
-  totalPosts: string | null;
+  news: any[];
+  totalNews: string;
+  notifis: any[];
+  totalNotifis: string;
+  title?: string;
 }) => {
   const router = useRouter();
-  const len = totalPosts ? Math.ceil(Number(totalPosts) / 10) : 1;
+  const len = news ? Math.ceil(Number(totalNews) / 10) : 1;
 
   const handleRouter = ({ selected }: { selected: number }) => {
     router.push(`/tin-tuc?page=${selected + 1}`);
@@ -89,25 +95,26 @@ export const Posts = ({
             pb="16px"
             color={"white"}
           >
-            Tin tức Đại học Thái Nguyên
+            {title || "Tin tức Đại học Thái Nguyên"}
           </Heading>
         </Container>
       </Box>
       <Box mt={"32px"}>
         <SLiderPosts>
-          {posts?.map((post: any, index: number) => (
+          {notifis?.map((post: any, index: number) => (
             <SwiperSlide key={index}>
               <CardBlog
                 date={post?.date ? formatDate(post.date) : ""}
                 key={index}
                 title={post?.title?.rendered}
+                tag="Thông báo"
                 desc={xss(post.excerpt.rendered)}
                 image={post?.featured_image || ""}
                 path={`/tin-tuc/${post?.slug}`}
               />
             </SwiperSlide>
           ))}
-          {posts.length === 0 && (
+          {news?.length === 0 && (
             <Grid placeItems={"center"} height={"40vh"}>
               Dữ liệu đang được chúng tôi cập nhập
             </Grid>
@@ -127,7 +134,7 @@ export const Posts = ({
               Tin tức
             </Heading>
             <VStack spacing={"16px"}>
-              {posts?.map((post: any, index: number) => (
+              {news?.map((post: any, index: number) => (
                 <CardBlogVert
                   key={index}
                   title={post?.title?.rendered}
@@ -137,7 +144,7 @@ export const Posts = ({
                   path={`/tin-tuc/${post?.slug}`}
                 />
               ))}
-              {posts?.length === 0 && (
+              {news?.length === 0 && (
                 <Grid placeItems={"center"} height={"40vh"}>
                   Dữ liệu đang được chúng tôi cập nhập
                 </Grid>

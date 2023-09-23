@@ -6,7 +6,6 @@ import { ModalBase } from "@/components/Modal";
 import { Box, Container, Divider, Flex, useDisclosure } from "@chakra-ui/react";
 import { DesktopNav } from "../components/DeskhopNav";
 import { HeaderTop } from "../components/HeaderTop";
-import { Logo } from "../components/Logo";
 import { MobileNav } from "../components/MobileNav";
 
 export const Header = () => {
@@ -23,7 +22,7 @@ export const Header = () => {
             "-webkit-gradient(linear,left top,left bottom,from(#004685),to(#004956e6));",
           position: "absolute",
           top: 0,
-          right: "36%",
+          right: "70%",
           zIndex: -1,
           transform: "skew(-30deg)",
           WebkitTransformOrigin: "left bottom",
@@ -61,7 +60,6 @@ export const Header = () => {
             justify={{ base: "center", lg: "start" }}
             align={"center"}
           >
-            <Logo />
             <Flex display={{ base: "none", lg: "flex" }} ml={10}>
               <DesktopNav />
             </Flex>
@@ -71,10 +69,11 @@ export const Header = () => {
             size={{ base: "sm", md: "lg" }}
             onClick={onToggle}
           >
-            Đăng ký học
+            Đăng ký tư vấn
           </BtnTheme>
         </Container>
       </Box>
+
       <ModalBase isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
         <FormGetFly1 title="Để lại thông tin" />
       </ModalBase>

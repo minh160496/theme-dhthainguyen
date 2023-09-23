@@ -3,8 +3,8 @@
 import { Loading } from "@/components/Loading";
 import dynamic from "next/dynamic";
 
-const Dangky = dynamic(
-  () => import("@/features/dang-ky").then((mod) => mod.Dangky),
+const Lienhe = dynamic(
+  () => import("@/features/lien-he").then((mod) => mod.Lienhe),
   {
     loading: () => <Loading />,
   }
@@ -13,7 +13,7 @@ const Dangky = dynamic(
 const Page = () => {
   return (
     <>
-      <Dangky />
+      <Lienhe />
     </>
   );
 };

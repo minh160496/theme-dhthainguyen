@@ -20,6 +20,7 @@ export const CardBlog = ({
   desc,
   path,
   tag,
+  bgTag,
   date,
 }: {
   image?: string;
@@ -27,6 +28,7 @@ export const CardBlog = ({
   desc: string;
   path: string;
   tag?: string;
+  bgTag?: string;
   date?: string;
 }) => {
   const [isMounted, setMount] = useState(false);
@@ -68,15 +70,22 @@ export const CardBlog = ({
             />
           </Box>
           <Stack>
-            <Text
-              color={"green.500"}
-              textTransform={"uppercase"}
-              fontWeight={800}
-              fontSize={"sm"}
-              letterSpacing={1.1}
-            >
-              {tag}
-            </Text>
+            <Box>
+              {tag && (
+                <Text
+                  fontWeight={600}
+                  fontSize={".8rem"}
+                  bg={bgTag || "green.500"}
+                  py={"6px"}
+                  px={"12px"}
+                  color={"white"}
+                  as={"span"}
+                  rounded={"md"}
+                >
+                  {tag}
+                </Text>
+              )}
+            </Box>
             <Heading
               className="event-heading"
               color={"gray.700"}

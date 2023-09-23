@@ -73,7 +73,7 @@ export const Footer = () => {
         <Container as={Stack} maxW={"6xl"} py={10}>
           <Flex justify="center" align={"center"} direction="column" mb="32px">
             <Heading size="md" textAlign="center" mb={4}>
-              Đăng ký nhận bản tin
+              Đăng ký nhận tư vấn
             </Heading>
             <Box maxW="md">
               <InputRes

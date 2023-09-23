@@ -27,7 +27,7 @@ export const BoxTest = ({
   return (
     <>
       <VStack
-        rounded={"2xl"}
+        rounded={"sm"}
         border={"1px solid teal"}
         padding={"16px"}
         alignItems={"start"}
