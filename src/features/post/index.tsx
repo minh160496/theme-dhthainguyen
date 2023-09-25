@@ -23,7 +23,9 @@ export const Post = ({
         {post && (
           <>
             <div className={styles["post__heading"]}>
-              <h1>{post?.title?.rendered}</h1>
+              <h1
+                dangerouslySetInnerHTML={{ __html: xss(post?.title?.rendered) }}
+              />
               <span>{formatDate(post?.date)}</span>
             </div>
             <div

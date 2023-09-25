@@ -4,6 +4,30 @@
   position: relative;
 }
 
+/* đoạn css cho các bài viết */
+.post p {
+  padding-bottom: 12px;
+}
+.post h1,
+.post h2,
+.post h3,
+.post h4 {
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+.post h1 {
+  font-size: 1.5rem;
+}
+.post h2 {
+  font-size: 1.4rem;
+}
+.post h3 {
+  font-size: 1.3rem;
+}
+.post h4 {
+  font-size: 1.1rem;
+}
+
 .post__heading {
   border-bottom: 1px solid #ccc;
   padding-bottom: 12px;
