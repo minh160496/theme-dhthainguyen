@@ -20,8 +20,8 @@ export const Event = ({ news, notifis }: { news: any[]; notifis: any[] }) => {
             image={post?.featured_image || ""}
             tag="Tin tức"
             bgTag="red.500"
-            title={post.title?.rendered || ""}
-            desc={post.excerpt?.rendered || ""}
+            title={post?.title?.rendered || ""}
+            desc={post?.excerpt?.rendered || ""}
             path={`/tin-tuc/${post.slug}`}
           />
         ))}
@@ -31,8 +31,8 @@ export const Event = ({ news, notifis }: { news: any[]; notifis: any[] }) => {
             image={post?.featured_image || ""}
             tag="Thông báo"
             bgTag="green.500"
-            title={post.title?.rendered || ""}
-            desc={post.excerpt?.rendered || ""}
+            title={post?.title?.rendered || ""}
+            desc={post?.excerpt?.rendered || ""}
             path={`/tin-tuc/${post.slug}`}
           />
         ))}
