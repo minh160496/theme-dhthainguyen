@@ -15,6 +15,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import xss from "xss";
 
 export const CardBlogVert = ({
   title,
@@ -72,9 +73,8 @@ export const CardBlogVert = ({
               size="sm"
               _hover={{ color: "red.500" }}
               transition={"all ease .3s"}
-            >
-              {title}
-            </Heading>
+              dangerouslySetInnerHTML={{ __html: xss(title) }}
+            />
           </HStack>
 
           {isMounted && (
