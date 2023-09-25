@@ -37,7 +37,7 @@ export const SamePosts = ({ postsCat }: { postsCat: any[] }) => {
               return (
                 <GridItem key={index}>
                   <CardBlog
-                    title={postCat.title.rendered}
+                    title={postCat?.title?.rendered}
                     desc=""
                     image={postCat?.featured_image || ""}
                     path={postCat.slug}

@@ -5,26 +5,27 @@
 }
 
 /* đoạn css cho các bài viết */
-.post p {
+.post__main p {
   padding-bottom: 12px;
 }
-.post h1,
-.post h2,
-.post h3,
-.post h4 {
+.post__main h1,
+.post__main h2,
+.post__main h3,
+.post__main h4 {
   font-weight: bold;
   padding-bottom: 8px;
+  padding-top: 14px;
 }
-.post h1 {
+.post__main h1 {
   font-size: 1.5rem;
 }
-.post h2 {
+.post__main h2 {
   font-size: 1.4rem;
 }
-.post h3 {
+.post__main h3 {
   font-size: 1.3rem;
 }
-.post h4 {
+.post__main h4 {
   font-size: 1.1rem;
 }
 

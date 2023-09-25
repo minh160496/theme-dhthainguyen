@@ -13,6 +13,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import xss from "xss";
 
 export const CardBlog = ({
   image,
@@ -99,9 +100,8 @@ export const CardBlog = ({
                 overflow: "hidden",
                 textOverflow: "ellipsis",
               }}
-            >
-              {title}
-            </Heading>
+              dangerouslySetInnerHTML={{ __html: xss(title) }}
+            />
             {isMounted && (
               <Text
                 color={"gray.500"}

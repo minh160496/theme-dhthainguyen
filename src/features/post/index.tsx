@@ -22,15 +22,21 @@ export const Post = ({
       <main>
         {post && (
           <>
-            <div className={styles["post__heading"]}>
-              <h1
-                dangerouslySetInnerHTML={{ __html: xss(post?.title?.rendered) }}
+            <div className={styles["post__main"]}>
+              <div className={styles["post__heading"]}>
+                <h1
+                  dangerouslySetInnerHTML={{
+                    __html: xss(post?.title?.rendered),
+                  }}
+                />
+                <span>{formatDate(post?.date)}</span>
+              </div>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: xss(post?.content?.rendered),
+                }}
               />
-              <span>{formatDate(post?.date)}</span>
             </div>
-            <div
-              dangerouslySetInnerHTML={{ __html: xss(post?.content?.rendered) }}
-            />
             <SamePosts postsCat={relatedPosts} />
           </>
         )}
