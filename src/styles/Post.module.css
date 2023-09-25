@@ -35,6 +35,11 @@
   display: block;
   margin: 0 auto;
 }
+.post__main figcaption {
+  text-align: center;
+  font-weight: 500;
+  padding-bottom: 8px;
+}
 
 .post__heading {
   border-bottom: 1px solid #ccc;
