@@ -13,7 +13,7 @@ const getLatestPosts = async () => {
     );
     const posts: any[] = await res.json();
 
-    return { posts: posts };
+    return { posts: posts || [] };
   } catch (error) {
     console.log(error);
     return { posts: [] };
@@ -33,15 +33,19 @@ const getSamePosts = async (post: any) => {
     );
 
     const relatedPosts: any[] = await resRelatedPosts.json();
-    const postsWithFeaturedImages = relatedPosts?.map((relatedPost: any) => {
-      const featured_image =
-        relatedPost._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
+    const postsWithFeaturedImages =
+      relatedPosts?.length > 0
+        ? relatedPosts?.map((relatedPost: any) => {
+            const featured_image =
+              relatedPost._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+              null;
 
-      return {
-        ...relatedPost,
-        featured_image,
-      };
-    });
+            return {
+              ...relatedPost,
+              featured_image,
+            };
+          })
+        : [];
 
     return postsWithFeaturedImages || [];
   }

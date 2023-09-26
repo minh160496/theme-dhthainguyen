@@ -16,17 +16,20 @@ const getLatestPosts = async () => {
     );
     const posts: any[] = await res.json();
 
-    const postsWithFeaturedImages = posts?.map((post: any) => {
-      const featured_image =
-        post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
+    const postsWithFeaturedImages =
+      posts?.length > 0
+        ? posts?.map((post: any) => {
+            const featured_image =
+              post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
 
-      return {
-        ...post,
-        featured_image,
-      };
-    });
+            return {
+              ...post,
+              featured_image,
+            };
+          })
+        : [];
 
-    return { posts: postsWithFeaturedImages };
+    return { posts: postsWithFeaturedImages || [] };
   } catch (error) {
     console.log(error);
     return { posts: [] };
