@@ -1,7 +1,8 @@
 "use client";
 
+import { BtnMes, BtnPhone, BtnZalo } from "@/components/BtnCTA";
 import { Loading } from "@/components/Loading";
-import { Box, useDisclosure } from "@chakra-ui/react";
+import { Box, VStack, useDisclosure } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 
@@ -78,6 +79,21 @@ export const Home = ({ news, notifis }: { news: any[]; notifis: any[] }) => {
       <Event news={news} notifis={notifis} />
 
       <ModalBase isOpen={isOpen} onClose={onClose} onOpen={onOpen} />
+      <Box
+        pos={"fixed"}
+        top={"50%"}
+        right={"0"}
+        transform={"translateY(-50%)"}
+        className="CTA"
+        zIndex={5}
+      >
+        <VStack>
+          {/* <BtnEmail aria-label="Email" /> */}
+          <BtnMes aria-label="messenter" />
+          <BtnZalo aria-label="zalo" />
+          <BtnPhone aria-label="phone" />
+        </VStack>
+      </Box>
     </>
   );
 };
