@@ -108,14 +108,16 @@ export const Footer = () => {
                 </Box>
                 <Box
                   as={Link}
-                  href={"mailto:daihoctructuyen@tnu.edu.vn"}
+                  href={
+                    "https://www.facebook.com/groups/800071498531146?locale=vi_VN"
+                  }
                   textDecor={"underline"}
                 >
                   Group Facebook: daihocthainguyen - elearning
                 </Box>
                 <Box
                   as={Link}
-                  href={"mailto:daihoctructuyen@tnu.edu.vn"}
+                  href={"https://www.facebook.com/TNUElearning?locale=vi_VN"}
                   textDecor={"underline"}
                 >
                   Fanpage: daihocthainguyen - elearning

@@ -72,7 +72,7 @@ export const BtnMes = (props: IconButtonProps) => {
         p={"8px"}
         transition={"width ease .4s"}
         as={"a"}
-        href={"https://www.facebook.com/TNUElearning?locale=vi_VN"}
+        href={"https://www.facebook.com/groups/800071498531146?locale=vi_VN"}
         {...props}
       />
     </Tooltip>
