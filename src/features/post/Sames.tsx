@@ -41,6 +41,7 @@ export const SamePosts = ({ postsCat }: { postsCat: any[] }) => {
                     desc=""
                     image={postCat?.featured_image || ""}
                     path={postCat.slug}
+                    imageH="150px"
                   />
                 </GridItem>
               );

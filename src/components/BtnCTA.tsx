@@ -32,7 +32,7 @@ export const BtnPhone = (props: IconButtonProps) => {
         bg={"red.500"}
         p={"8px"}
         as={"a"}
-        href={"tel: 0941010044"}
+        href={"tel: 0914709118"}
         {...props}
       />
     </Tooltip>
@@ -49,7 +49,7 @@ export const BtnZalo = (props: IconButtonProps) => {
         bg={"blue.500"}
         p={"8px"}
         as={"a"}
-        href={"https://zalo.me/0941010044"}
+        href={"https://zalo.me/0914709118"}
         {...props}
       />
     </Tooltip>
@@ -71,6 +71,8 @@ export const BtnMes = (props: IconButtonProps) => {
         bg={"blue.500"}
         p={"8px"}
         transition={"width ease .4s"}
+        as={"a"}
+        href={"https://www.facebook.com/TNUElearning?locale=vi_VN"}
         {...props}
       />
     </Tooltip>

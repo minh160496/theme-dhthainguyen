@@ -23,6 +23,7 @@ export const CardBlog = ({
   tag,
   bgTag,
   date,
+  imageH,
 }: {
   image?: string;
   title: string;
@@ -31,6 +32,7 @@ export const CardBlog = ({
   tag?: string;
   bgTag?: string;
   date?: string;
+  imageH?: string;
 }) => {
   const [isMounted, setMount] = useState(false);
 
@@ -67,6 +69,7 @@ export const CardBlog = ({
               width={600}
               height={350}
               src={image || `/blog.jpg`}
+              style={{ maxHeight: imageH }}
               alt={title}
             />
           </Box>
