@@ -31,6 +31,10 @@
 .post__main li {
   padding-bottom: 8px;
 }
+.post__main a {
+  color: blueviolet;
+  text-decoration: underline;
+}
 .post__main img {
   display: block;
   margin: 0 auto;
