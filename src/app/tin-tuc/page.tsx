@@ -8,7 +8,7 @@ const getPosts = async ({ page }: { page: string }) => {
   try {
     //get all categories
     const resCats = await fetch(`${api_url}/categories`, {
-      next: { revalidate: 10 },
+      next: { revalidate: 1800 },
     });
     const cats: any[] = (await resCats.json()) || [];
     const newCat = cats?.find((cat) => cat.name === "Tin Tức");
@@ -20,7 +20,7 @@ const getPosts = async ({ page }: { page: string }) => {
     const resNews = await fetch(
       `${api_url}/posts?_embed&per_page=10&status=publish&page=${page}&categories=${idNew}`,
       {
-        next: { revalidate: 10 },
+        next: { revalidate: 1800 },
       }
     );
     const totalNews = resNews.headers.get("X-WP-Total");
@@ -42,7 +42,7 @@ const getPosts = async ({ page }: { page: string }) => {
     const resNotifis = await fetch(
       `${api_url}/posts?_embed&per_page=10&status=publish&page=${page}&categories=${idNotifi}`,
       {
-        next: { revalidate: 10 },
+        next: { revalidate: 1800 },
       }
     );
     const totalNotifis = resNotifis.headers.get("X-WP-Total");
