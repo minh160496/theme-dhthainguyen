@@ -18,7 +18,7 @@ export const Logo = () => {
       />
       <VStack color={"#028dbf"} align={"start"}>
         <Heading as="h1" size={{ base: "sm", lg: "md" }}>
-          Đại học thái nguyên
+          Đại học Thái Nguyên
         </Heading>
         <Heading as="h2" fontSize={{ base: ".8rem" }}>
           Trung tâm đào tạo từ xa

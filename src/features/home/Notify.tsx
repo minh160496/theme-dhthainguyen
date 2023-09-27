@@ -138,7 +138,7 @@ const info = [
         title: "Trạm tuyển sinh Đại học Thái Nguyên:",
         list: [
           "Hà Nội: Số 116 Trần Vỹ, Mai Dịch, Cầu Giấy, Hà Nội",
-          "Hồ Chí Minh: Tầng 1, số 81 Điện Biên Phủ, phường Đa Kao, Quận 1, TP.HCM",
+          "Hồ Chí Minh: Số 91 Ký Con, phường Nguễn Thái Bình, Quận 1, Hồ Chí Minh",
           "Hotline: 094.1010.044",
           "Email: daihoctructuyen@tnu.edu.vn",
         ],

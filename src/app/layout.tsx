@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import { Providers } from "./provider";
 
 export const metadata: Metadata = {
-  title: "Trang chủ Đại học Thái Nguyên",
+  title: "Đại học Thái Nguyên hệ đào tạo từ xa ",
   description: "Đại học Thái Nguyên - tuyển sinh hệ đào tạo từ xa",
 };
 
