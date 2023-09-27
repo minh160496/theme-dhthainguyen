@@ -36,7 +36,7 @@ export const About = () => {
         </Text>
         <Grid placeItems={"center"} py={"24px"}>
           <Image
-            src={"/truong-dai-hoc-nong-lam-thai-nguyen.jpg"}
+            src={"/dhtn.jpg"}
             alt="Đại học Thái Nguyên"
             width={600}
             height={436}
