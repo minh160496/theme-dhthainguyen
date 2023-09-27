@@ -1,11 +1,29 @@
+"use client";
+
 import { TextScroll } from "@/components/TextScroll";
+import { useEffect, useState } from "react";
 
 export const TextScrollHomePage = () => {
-  const listInf = [
-    "Lịch khai giảng tại Hà Nội: 15/10",
-    "Lịch khai giảng tại Thái Nguyên: 08/10",
-    "Lịch khai giảng tại Hồ Chí Minh: 01/10",
-    "Lịch khai giảng tại Đà Nẵng: 09/10",
-  ];
-  return <TextScroll list={listInf} />;
+  const [list, setList] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const getLichKg = async () => {
+      try {
+        const res = await fetch("/api/data-lichKg");
+        const data = await res.json();
+        const list: string[] = data?.list || [];
+
+        list?.length > 0 && setList(list);
+      } catch (error) {
+        console.log(error);
+      }
+
+      setIsLoading(false);
+    };
+
+    getLichKg();
+  }, []);
+
+  return <TextScroll list={list} isLoading={isLoading} />;
 };
