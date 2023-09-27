@@ -2,9 +2,13 @@
 
 import { Center, Spinner, SpinnerProps } from "@chakra-ui/react";
 
-export const Loading = (props: SpinnerProps) => {
+interface ILoading extends SpinnerProps {
+  he?: string;
+}
+
+export const Loading = (props: ILoading) => {
   return (
-    <Center minH={"70vh"}>
+    <Center minH={props?.he || "70vh"}>
       <Spinner color="red.500" size={"md"} {...props} />
     </Center>
   );
