@@ -58,7 +58,7 @@ export const CardBlog = ({
         w={"full"}
         bg={"white"}
         boxShadow={"2xl"}
-        rounded={"md"}
+        rounded={"sm"}
         p={6}
         overflow={"hidden"}
         h={"100%"}
@@ -68,7 +68,7 @@ export const CardBlog = ({
             <Image
               width={600}
               height={350}
-              src={image || `/blog.jpg`}
+              src={image || `/blog.jpeg`}
               style={{ maxHeight: imageH }}
               alt={title}
             />

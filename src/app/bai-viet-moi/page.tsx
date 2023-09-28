@@ -10,11 +10,20 @@ const getLatestPosts = async () => {
       `${api_url}/posts?_embed&per_page=9&orderby=date&order=desc`,
       {
         next: {
-          revalidate: 10,
+          revalidate: 1,
         },
       }
     );
-    const posts: any[] = await res.json();
+    const dataPosts: any[] = await res.json();
+    const posts =
+      dataPosts?.length > 0
+        ? dataPosts.filter(
+            (dataPost) =>
+              dataPost?.slug !== "form-main" &&
+              dataPost?.slug !== "form-poup" &&
+              dataPost?.slug !== "lich-khai-giang"
+          )
+        : [];
 
     const postsWithFeaturedImages =
       posts?.length > 0

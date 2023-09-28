@@ -8,7 +8,7 @@ const getLatestPosts = async () => {
     const res = await fetch(
       `${api_url}/posts?posts?per_page=10&orderby=date&order=desc`,
       {
-        next: { revalidate: 10 },
+        next: { revalidate: 1 },
       }
     );
     const posts: any[] = await res.json();
@@ -28,7 +28,7 @@ const getSamePosts = async (post: any) => {
     const resRelatedPosts = await fetch(
       `${api_url}/posts?categories=${categoryId}&exclude=${post?.id}&per_page=3&_embed`,
       {
-        next: { revalidate: 10 },
+        next: { revalidate: 1 },
       }
     );
 
