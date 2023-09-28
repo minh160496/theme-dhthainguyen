@@ -139,7 +139,7 @@ export const Posts = ({
                   key={index}
                   title={post?.title?.rendered}
                   desc={xss(post.excerpt.rendered)}
-                  tag="new"
+                  tag="tin tức"
                   image={post?.featured_image || ""}
                   path={`/tin-tuc/${post?.slug}`}
                 />

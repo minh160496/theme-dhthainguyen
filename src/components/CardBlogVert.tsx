@@ -41,16 +41,16 @@ export const CardBlogVert = ({
       direction={{ base: "column", sm: "row" }}
       overflow="hidden"
       variant="outline"
-      rounded={"2xl"}
+      rounded={"sm"}
       as={Link}
       href={path ?? "#"}
     >
       <Box flex={1}>
         <Box m={"12px 24px"} rounded={"sm"} overflow={"hidden"}>
           <Image
-            width={500}
-            height={300}
-            src={image || `/blog.jpg`}
+            width={320}
+            height={200}
+            src={image || `/blog.jpeg`}
             alt={title}
           />
         </Box>
@@ -65,6 +65,7 @@ export const CardBlogVert = ({
               colorScheme="red"
               fontSize={"sm"}
               p="6px"
+              whiteSpace={"nowrap"}
             >
               {tag}
             </Tag>
