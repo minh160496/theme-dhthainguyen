@@ -330,7 +330,7 @@ const comonForm = ({ id, href }: { id: string; href: string }) => {
   if (!s?.hasChildNodes()) s?.appendChild(f);
 };
 
-export const FormGetFly2 = ({ title }: { title?: string }) => {
+export const FormMain = ({ title }: { title?: string }) => {
   const [id, setId] = useState("getfly-optin-form-iframe-1695175881155");
   const [href, setHref] = useState(
     "https://aum.getflycrm.com/api/forms/viewform/?key=AxFWg9xmg9RGLjPsUiSwBCtbhyYTGWB3rBOtmMnxfQCEc9Draw&referrer="
@@ -379,7 +379,7 @@ export const FormGetFly2 = ({ title }: { title?: string }) => {
   );
 };
 
-export const FormGetFly1 = ({ title }: { title?: string }) => {
+export const FormPoup = ({ title }: { title?: string }) => {
   const [id, setId] = useState("getfly-optin-form-iframe-1695175842604");
   const [href, setHref] = useState(
     "https://aum.getflycrm.com/api/forms/viewform/?key=Gks7frPWuBMzyzUC6CzH0zKCnGrO7OBcnenVzuBlKcWsplsPTm&referrer="

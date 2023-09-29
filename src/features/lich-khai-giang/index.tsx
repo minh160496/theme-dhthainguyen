@@ -1,4 +1,6 @@
-import { BoxTest } from "@/components/BoxTest";
+"use client";
+
+import { Frame } from "@/components/Frame";
 import { Loading } from "@/components/Loading";
 import { LayoutNganh } from "@/layouts/layoutNganh";
 
@@ -12,7 +14,7 @@ export const LichKg = ({
   return (
     <LayoutNganh title="Lịch khai giảng Đại học Thái Nguyên - E learning">
       {!isLoading && (
-        <BoxTest
+        <Frame
           title1="Cập nhật lịch khai giảng dự kiến"
           list1={list}
           label="Đăng ký tư vấn"

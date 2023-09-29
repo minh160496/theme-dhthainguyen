@@ -1,6 +1,6 @@
 "use client";
 
-import { FormGetFly2 } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import { Notify } from "@/features/home/Notify";
 import {
   Box,
@@ -48,7 +48,7 @@ export const LayoutNganh = ({
                     Tư vấn chuyên nghiệp. Thủ tục nhanh gọn. Đi học được luôn.
                     Ưu tiên nộp hồ sơ sớm
                   </Text>
-                  <FormGetFly2 />
+                  <FormMain />
                 </Box>
               </GridItem>
             </SimpleGrid>

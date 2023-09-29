@@ -20,7 +20,7 @@ import { BiPhone } from "react-icons/bi";
 import { BsMessenger } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { SiZalo } from "react-icons/si";
-import { FormGetFly1, FormGetFly2 } from "./FormContact";
+import { FormPoup, FormMain } from "./FormContact";
 
 export const BtnPhone = (props: IconButtonProps) => {
   return (
@@ -99,7 +99,7 @@ export const BtnEmail = (props: IconButtonProps) => {
           Để lại thông tin
         </PopoverHeader>
         <PopoverBody>
-          <FormGetFly1 />
+          <FormPoup />
         </PopoverBody>
       </PopoverContent>
     </Popover>

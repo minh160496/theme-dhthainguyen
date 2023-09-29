@@ -1,10 +1,10 @@
-import { BoxTest } from "@/components/BoxTest";
+import { Frame } from "@/components/Frame";
 import { LayoutNganh } from "@/layouts/layoutNganh";
 
 export const Nnt = () => {
   return (
     <LayoutNganh title="Ngành ngôn ngữ Trung">
-      <BoxTest
+      <Frame
         title1="Tổng quan chương trình"
         list1={[
           "Ngôn ngữ Trung Quốc là ngành học nghiên cứu và sử dụng tiếng Trung trên nhiều lĩnh vực khác nhau như kinh tế, thương mại, du lịch, ngoại giao. Trung Quốc hiện là quốc gia có nền kinh tế và tốc độ tăng trưởng nhanh chóng hàng đầu tại Châu Á trên thế giới, từ đó mà ngôn ngữ Trung trở thành một trong các ngôn ngữ phổ biến được sử dụng rộng rãi.",

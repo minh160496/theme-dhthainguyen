@@ -1,4 +1,4 @@
-import { FormGetFly2 } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import {
   Box,
   Circle,
@@ -44,6 +44,7 @@ export const Lienhe = () => {
                 size={{ base: "md", lg: "lg" }}
                 textAlign={"center"}
                 pb={"16px"}
+                color={"blue.700"}
               >
                 Thông tin
               </Heading>
@@ -85,7 +86,7 @@ export const Lienhe = () => {
               </VStack>
             </GridItem>
             <GridItem border={"1px solid"} borderColor={"gray.400"} p={"16px"}>
-              <FormGetFly2 title="Vui lòng điền thông tin" />
+              <FormMain title="Vui lòng điền thông tin" />
             </GridItem>
             <GridItem colSpan={{ base: 1, md: 2 }}></GridItem>
           </SimpleGrid>

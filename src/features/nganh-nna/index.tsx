@@ -1,10 +1,10 @@
-import { BoxTest } from "@/components/BoxTest";
+import { Frame } from "@/components/Frame";
 import { LayoutNganh } from "@/layouts/layoutNganh";
 
 export const Nna = () => {
   return (
     <LayoutNganh title="Ngành ngôn ngữ Anh">
-      <BoxTest
+      <Frame
         title1="Tổng quan chương trình"
         list1={[
           "Tiếng Anh là ngôn ngữ chính thức của Vương quốc Anh, Hoa Kỳ, Canada, Úc, và nhiều quốc gia và vùng lãnh thổ khác trên khắp thế giới. Nó là một trong những ngôn ngữ phổ biến nhất và được sử dụng rộng rãi nhất trên thế giới. Tiếng Anh thuộc hệ thống ngôn ngữ Germanic và được viết bằng bảng chữ cái Latin",

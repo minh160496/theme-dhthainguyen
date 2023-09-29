@@ -22,7 +22,7 @@ import { FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa";
 import { InputRes } from "../../components/InputRes";
 import { Logo } from "../components/Logo";
 import { ModalBase } from "@/components/Modal";
-import { FormGetFly1 } from "@/components/FormContact";
+import { FormPoup } from "@/components/FormContact";
 import Image from "next/image";
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
@@ -189,7 +189,7 @@ export const Footer = () => {
         </Box>
       </Box>
       <ModalBase isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
-        <FormGetFly1 title="Để lại thông tin" />
+        <FormPoup title="Để lại thông tin" />
       </ModalBase>
     </>
   );

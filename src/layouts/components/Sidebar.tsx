@@ -1,6 +1,6 @@
 "use client";
 
-import { FormGetFly2 } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import { categotys } from "@/features/home/Categorys";
 import {
   Box,
@@ -154,7 +154,7 @@ export const Sidebar = ({ sticky }: { sticky?: string }) => {
         >
           Đăng ký tư vấn
         </Heading>
-        <FormGetFly2 />
+        <FormMain />
       </Box>
     </Box>
   );

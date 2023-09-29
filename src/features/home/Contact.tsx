@@ -12,7 +12,7 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import { AiFillStar } from "react-icons/ai";
-import { FormGetFly2 } from "../../components/FormContact";
+import { FormMain } from "../../components/FormContact";
 
 const lists = [
   "KHÔNG phải thi đầu vào, chỉ xét tuyển hồ sơ",
@@ -70,7 +70,7 @@ export const Contact = () => {
           </GridItem>
 
           <GridItem>
-            <FormGetFly2 />
+            <FormMain />
           </GridItem>
         </SimpleGrid>
       </Container>

@@ -7,10 +7,10 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { BtnTheme } from "./BtnTheme";
-import { FormGetFly1 } from "./FormContact";
+import { FormPoup } from "./FormContact";
 import { ModalBase } from "./Modal";
 
-export const BoxTest = ({
+export const Frame = ({
   title1,
   title2,
   label,
@@ -24,6 +24,7 @@ export const BoxTest = ({
   list2?: string[];
 }) => {
   const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
+
   return (
     <>
       <VStack
@@ -60,7 +61,7 @@ export const BoxTest = ({
         </HStack>
       </VStack>
       <ModalBase isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
-        <FormGetFly1 title="Đăng ký tư vấn" />
+        <FormPoup title="Đăng ký tư vấn" />
       </ModalBase>
     </>
   );
