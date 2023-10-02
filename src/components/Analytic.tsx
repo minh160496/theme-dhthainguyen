@@ -1,6 +1,6 @@
 "use client";
 
-import { GTM_ID, pageview } from "@/lib/gtm";
+import { GTM_ID, GA_ID, pageview } from "@/lib/gtm";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect } from "react";
@@ -42,6 +42,16 @@ export const Analytics = () => {
                   `,
         }}
       />
+      <Script src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', '${GA_ID}');
+        `}
+      </Script>
     </>
   );
 };

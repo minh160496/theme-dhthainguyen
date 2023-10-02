@@ -1,8 +1,10 @@
 "server only";
 
+import { Analytics } from "@/components/Analytic";
 import { Footer } from "@/layouts/footer";
 import { Header } from "@/layouts/header";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Providers } from "./provider";
 
 export const metadata: Metadata = {
@@ -21,6 +23,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         />
       </head>
       <body>
+        <Suspense>
+          <Analytics />
+        </Suspense>
         <Providers>
           <Header />
           {children}
