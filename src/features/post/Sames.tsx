@@ -11,8 +11,30 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-export const SamePosts = ({ postsCat }: { postsCat: any[] }) => {
+export const SamePosts = ({ catId }: { catId?: string }) => {
+  const [samePosts, setSamePosts] = useState<any[]>([]);
+
+  useEffect(() => {
+    const getSamePosts = async () => {
+      try {
+        if (catId) {
+          // Lấy danh sách các bài viết cùng thể loại
+          const res = await fetch(`/api/same-posts/?catId=${catId}`, {
+            next: { revalidate: 3 },
+          });
+          const data: { samePosts: any[] } = await res.json();
+          const { samePosts } = data;
+          if (samePosts?.length) setSamePosts(samePosts);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getSamePosts();
+  }, [catId]);
   return (
     <>
       <Divider pt={"32px"} />
@@ -32,7 +54,7 @@ export const SamePosts = ({ postsCat }: { postsCat: any[] }) => {
         </HStack>
 
         <SimpleGrid columns={{ base: 1, md: 3, lg: 3 }} gap={"20px"}>
-          {postsCat.map((postCat, index) => {
+          {samePosts.map((postCat, index) => {
             if (index < 3)
               return (
                 <GridItem key={index}>

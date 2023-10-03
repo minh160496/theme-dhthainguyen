@@ -7,13 +7,10 @@ import { SamePosts } from "./Sames";
 import { Share } from "./Share";
 import styles from "@/styles/Post.module.css";
 
-export const Post = ({
-  post,
-  relatedPosts,
-}: {
-  post: any;
-  relatedPosts: any[];
-}) => {
+export const Post = ({ post }: { post: any }) => {
+  const catIds = post?.categories || [];
+  const catId = catIds[0];
+
   return (
     <article className={styles["post"]}>
       <div className={styles["post--share"]}>
@@ -37,7 +34,7 @@ export const Post = ({
                 }}
               />
             </div>
-            <SamePosts postsCat={relatedPosts} />
+            <SamePosts catId={catId} />
           </>
         )}
 

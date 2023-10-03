@@ -4,15 +4,15 @@ const getPost = async () => {
   const api_url = process.env.API_URL || "";
 
   try {
-    //get all categories
-    const resCats = await fetch(`${api_url}/categories`, {
-      next: { revalidate: 3 },
-    });
-    const cats: any[] = (await resCats.json()) || [];
-    const newCat = cats?.find((cat) => cat.name === "Tin Tức");
-    const idNew = newCat?.id;
-    const notifiCat = cats?.find((cat) => cat.name === "Thông báo");
-    const idNotifi = notifiCat?.id;
+    // //get all categories
+    // const resCats = await fetch(`${api_url}/categories`, {
+    //   next: { revalidate: 3 },
+    // });
+    // const cats: any[] = (await resCats.json()) || [];
+    // const newCat = cats?.find((cat) => cat.name === "Tin Tức");
+    const idNew = 4;
+    // const notifiCat = cats?.find((cat) => cat.name === "Thông báo");
+    const idNotifi = 3;
 
     //get posts category==='tin-tuc'
     const resNews = await fetch(
