@@ -5,10 +5,16 @@ import { Box, Container, Divider, Heading } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { Suspense } from "react";
-import { ListPosts } from "./ListPosts";
 
 const SLiderPosts = dynamic(
   () => import("./SliderPosts").then((mod) => mod.SLiderPosts),
+  {
+    loading: () => <Loading />,
+  }
+);
+
+const ListPosts = dynamic(
+  () => import("./ListPosts").then((mod) => mod.ListPosts),
   {
     loading: () => <Loading />,
   }

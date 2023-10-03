@@ -12,6 +12,7 @@ import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import xss from "xss";
 import { useSize } from "../../hooks/useSizeWindow";
+import { Loading } from "@/components/Loading";
 
 export const StyledContainer = styled(Container)`
   .mySwiper {
@@ -29,9 +30,11 @@ export const SLiderPosts = () => {
   const page = searchParams.get("page") || "1";
 
   const [posts, setPosts] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getPosts = async () => {
+      setIsLoading(true);
       try {
         const res = await fetch(`/api/posts/?type=notifis&page=${page}`, {
           next: { revalidate: 3 },
@@ -43,6 +46,7 @@ export const SLiderPosts = () => {
       } catch (error) {
         console.log(error);
       }
+      setIsLoading(false);
     };
 
     getPosts();
@@ -50,34 +54,40 @@ export const SLiderPosts = () => {
 
   return (
     <StyledContainer maxW="6xl">
-      <Swiper
-        slidesPerView={(size.width < 480 && 1) || (size.width < 992 && 2) || 3}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
-        {posts?.map((post: any, index: number) => (
-          <SwiperSlide key={index}>
-            <CardBlog
-              date={post?.date ? formatDate(post.date) : ""}
-              key={index}
-              title={post?.title?.rendered}
-              tag="Thông báo"
-              desc={xss(post.excerpt.rendered)}
-              image={post?.featured_image || ""}
-              path={`/tin-tuc/${post?.slug}`}
-            />
-          </SwiperSlide>
-        ))}
-        {posts?.length === 0 && (
-          <Grid placeItems={"center"} height={"40vh"}>
-            Dữ liệu đang được chúng tôi cập nhập
-          </Grid>
-        )}
-      </Swiper>
+      {!isLoading && (
+        <Swiper
+          slidesPerView={
+            (size.width < 480 && 1) || (size.width < 992 && 2) || 3
+          }
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          {posts?.map((post: any, index: number) => (
+            <SwiperSlide key={index}>
+              <CardBlog
+                date={post?.date ? formatDate(post.date) : ""}
+                key={index}
+                title={post?.title?.rendered}
+                tag="Thông báo"
+                desc={xss(post.excerpt.rendered)}
+                image={post?.featured_image || ""}
+                path={`/tin-tuc/${post?.slug}`}
+              />
+            </SwiperSlide>
+          ))}
+          {posts?.length === 0 && (
+            <Grid placeItems={"center"} height={"40vh"}>
+              Dữ liệu đang được chúng tôi cập nhập
+            </Grid>
+          )}
+        </Swiper>
+      )}
+
+      {isLoading && <Loading />}
     </StyledContainer>
   );
 };
