@@ -1,12 +1,16 @@
 "use client";
 
-import { Container } from "@chakra-ui/react";
+import { CardBlog } from "@/components/CardBlog";
+import { formatDate } from "@/ultil/date";
+import { Container, Grid } from "@chakra-ui/react";
 import styled from "@emotion/styled";
-import { ReactNode } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import { Swiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import xss from "xss";
 import { useSize } from "../../hooks/useSizeWindow";
 
 export const StyledContainer = styled(Container)`
@@ -19,8 +23,31 @@ export const StyledContainer = styled(Container)`
   }
 `;
 
-export const SLiderPosts = ({ children }: { children: ReactNode }) => {
+export const SLiderPosts = () => {
   const { size } = useSize();
+  const searchParams = useSearchParams();
+  const page = searchParams.get("page") || "1";
+
+  const [posts, setPosts] = useState<any[]>([]);
+
+  useEffect(() => {
+    const getPosts = async () => {
+      try {
+        const res = await fetch(`/api/posts/?type=notifis&page=${page}`, {
+          next: { revalidate: 3 },
+        });
+
+        const data: { posts: any[] } = await res.json();
+        const { posts } = data;
+        posts?.length && setPosts(posts);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getPosts();
+  }, [page]);
+
   return (
     <StyledContainer maxW="6xl">
       <Swiper
@@ -32,7 +59,24 @@ export const SLiderPosts = ({ children }: { children: ReactNode }) => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        {children}
+        {posts?.map((post: any, index: number) => (
+          <SwiperSlide key={index}>
+            <CardBlog
+              date={post?.date ? formatDate(post.date) : ""}
+              key={index}
+              title={post?.title?.rendered}
+              tag="Thông báo"
+              desc={xss(post.excerpt.rendered)}
+              image={post?.featured_image || ""}
+              path={`/tin-tuc/${post?.slug}`}
+            />
+          </SwiperSlide>
+        ))}
+        {posts?.length === 0 && (
+          <Grid placeItems={"center"} height={"40vh"}>
+            Dữ liệu đang được chúng tôi cập nhập
+          </Grid>
+        )}
       </Swiper>
     </StyledContainer>
   );
