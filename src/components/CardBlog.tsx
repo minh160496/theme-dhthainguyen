@@ -64,7 +64,15 @@ export const CardBlog = ({
         h={"100%"}
       >
         <Box>
-          <Box bg={"gray.100"} mt={-6} mx={-6} mb={6} pos={"relative"}>
+          <Box
+            bg={"gray.100"}
+            mt={-6}
+            mx={-6}
+            mb={6}
+            pos={"relative"}
+            aspectRatio={260 / 173}
+            overflow={"hidden"}
+          >
             <Image
               width={600}
               height={350}
