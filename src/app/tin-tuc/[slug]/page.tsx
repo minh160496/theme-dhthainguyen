@@ -19,7 +19,7 @@ export async function generateMetadata(
 
   // fetch data
   const postArr = await fetch(`${api_url}/posts?slug=${slug}`, {
-    next: { revalidate: 3 },
+    next: { revalidate: 3600 },
   }).then((res) => res.json());
 
   const post = postArr[0];
@@ -35,7 +35,7 @@ export async function generateMetadata(
 const getPost = async ({ slug }: { slug: string }) => {
   try {
     const res = await fetch(`${api_url}/posts?slug=${slug}`, {
-      next: { revalidate: 3 },
+      next: { revalidate: 3600 },
     });
     const posts = await res.json();
 
