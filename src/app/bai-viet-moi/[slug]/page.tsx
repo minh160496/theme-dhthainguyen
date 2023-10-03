@@ -20,47 +20,13 @@ const getLatestPosts = async () => {
   }
 };
 
-const getSamePosts = async (post: any) => {
-  const categoryId = post?.categories[0]; // Giả sử mỗi bài viết chỉ thuộc về một thể loại
-
-  if (categoryId) {
-    // Lấy danh sách các bài viết cùng thể loại
-    const resRelatedPosts = await fetch(
-      `${api_url}/posts?categories=${categoryId}&exclude=${post?.id}&per_page=3&_embed`,
-      {
-        next: { revalidate: 1 },
-      }
-    );
-
-    const relatedPosts: any[] = await resRelatedPosts.json();
-    const postsWithFeaturedImages =
-      relatedPosts?.length > 0
-        ? relatedPosts?.map((relatedPost: any) => {
-            const featured_image =
-              relatedPost._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-              null;
-
-            return {
-              ...relatedPost,
-              featured_image,
-            };
-          })
-        : [];
-
-    return postsWithFeaturedImages || [];
-  }
-
-  return [];
-};
-
 const Page = async ({ params }: { params: { slug: string } }) => {
   const { posts } = await getLatestPosts();
   const post = posts?.find((post) => post.slug === params.slug);
-  const relatedPosts = await getSamePosts(post);
 
   return (
     <div>
-      <Post post={post} relatedPosts={relatedPosts} />
+      <Post post={post} />
     </div>
   );
 };
